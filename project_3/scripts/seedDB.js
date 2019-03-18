@@ -178,7 +178,7 @@ const siteSeed = [
 },
 
 {
-  name: "Marina City",
+name: "Marina City",
 architect: "Bertrand Goldberg",
 neighborhood: "North Side",
 address: "State St & Wacker Dr",
