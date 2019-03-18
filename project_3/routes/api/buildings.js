@@ -9,7 +9,7 @@ router.route("/")
   router.route("/saved")
   .get(Controller.findAll)
 
-  router.route("/google")
+  router.route("/new")
     .get(Controller.create)
 // Matches with "/api/books/:id"
 router

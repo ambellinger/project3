@@ -1,0 +1,17 @@
+nav { background-color:#4E2A84; }
+
+.navbar-brand{
+    color:white;
+    font-family: 'Yeseva One', cursive;
+
+
+}
+
+.nav-item{color:white;}
+
+ a:hover{ 
+     
+          color:  #716C6B;
+          opacity:1;
+        text-decoration: none;
+};
