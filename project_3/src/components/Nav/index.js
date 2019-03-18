@@ -6,9 +6,9 @@ function Nav() {
   return (
     <nav className="navbar">
       <a className="navbar-brand" href="/">
-        Northwestern Univeristy Press
+        Explore Chicago Architecture
       </a>
-      <a className="nav-item" href="/saved">My Course Adoptions</a>
+      <a className="nav-item" href="/saved">My Saved Buildings</a>
     </nav>
   );
 }
