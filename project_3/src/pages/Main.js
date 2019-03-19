@@ -12,7 +12,10 @@ render(){
 <div>
     <Nav/>
     <Jumbotron/>
+    <div class ="container">
+
 <h1> hello I am the main page</h1>
+</div>
 </div>
     )
 }
