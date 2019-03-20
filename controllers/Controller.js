@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/Building.js");
 
 // Defining methods for the buildings Controller
 module.exports = {
