@@ -46,7 +46,7 @@ loadBuildings = () => {
                 //   link={book.link}
                 //   authors={book.authors}
                 //   description={book.description}
-                //   image={book.image}
+                  image={buildings.image}
                   clickHandler={this.deleteBook}
               
                   />
