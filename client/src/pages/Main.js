@@ -42,11 +42,10 @@ loadBuildings = () => {
                   <Saved
                   booknum={buildings._id}
                   name={buildings.name}
-                //   subtitle={book.subtitle}
-                //   link={book.link}
-                //   authors={book.authors}
-                //   description={book.description}
+                  architect={buildings.architect}
+                  description={buildings.description}
                   image={buildings.image}
+                  year={buildings.year}
                   clickHandler={this.deleteBook}
               
                   />

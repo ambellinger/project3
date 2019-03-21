@@ -9,7 +9,8 @@ class Saved extends Component {
 
  
  <h1><a href={this.props.link}>{this.props.name}</a></h1>
- <h2>{this.props.author}</h2>
+ <h2>{this.props.architect}</h2>
+ <h6>{this.props.year}</h6>
  <div id = "description">
  
  <img src ={this.props.image} height= "300px"alt="book_image"/><p>{this.props.description}</p>
