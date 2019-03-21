@@ -1,23 +1,24 @@
 const router = require("express").Router();
-const Controller = require("../../controllers/Controller.js");
+const BldgController = require("../../controllers/BldgController");
 
 // Matches with "/api/books"
 router.route("/")
 // "this route is working"
-  .get(Controller.findAll)
-  .post(Controller.create);
-  router.route("/saved")
-  .get(Controller.findAll)
+  .get(BldgController.findAll)
+  .post(BldgController.create);
 
-  router.route("/new")
-    .get(Controller.create)
+  // router.route("/saved")
+  // .get(BldgController.findAll)
+
+  // router.route("/new")
+  //   .get(BldgController.create)
 // Matches with "/api/books/:id"
 router
   .route("/:id")
-  .get(Controller.findById)
+  // .get(BldgController.findById)
   // .put(booksController.update)
-  .delete(Controller.remove)
-  .post(Controller.create);
+  .delete(BldgController.remove)
+  .post(BldgController.create);
 
   
 

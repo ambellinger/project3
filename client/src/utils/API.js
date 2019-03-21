@@ -9,7 +9,7 @@ export default {
   
   // Gets all books
   getBuildings: function() {
-    return axios.get(URL);
+    return axios.get("/api/buildings");
   },
 
  
