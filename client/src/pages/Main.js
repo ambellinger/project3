@@ -7,13 +7,26 @@ import API from "../utils/API";
 
 
 class Main extends Component{
-
-    state ={
+  constructor() {
+    super()
+    this.state = {
+        loggedIn: false,
         buildings: []
     }
 
+    this.updateUser = this.updateUser.bind(this)
+}
+  
+    
+
 componentDidMount(){
     this.loadBuildings()
+    this.setState({loggedIn: this.props.loggedIn})
+    
+}
+
+updateUser(userObject) {
+  this.setState(userObject)
 }
 
 loadBuildings = () => {
@@ -29,7 +42,7 @@ loadBuildings = () => {
       render() {
         return (
             <div>
-            <Nav/>
+            <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             <Jumbotron/>
            
     
