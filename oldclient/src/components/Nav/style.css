@@ -1,0 +1,16 @@
+nav { background-color: black; }
+
+.navbar-brand{
+    color:white;
+
+
+}
+
+.nav-item{color:white;}
+
+ a:hover{ 
+     
+          color:  #716C6B;
+          opacity:1;
+        text-decoration: none;
+};
