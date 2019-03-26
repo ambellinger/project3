@@ -10,7 +10,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const user = require('./routes/user')
+const user = require('./routes')
 
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -29,19 +29,19 @@ app.use(
 )
 app.use(bodyParser.json())
 
-// Sessions
-app.use(
-  session({
-      secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
-      store: new MongoStore({ mongooseConnection: dbConnection, useNewUrlParser: true }),
-      resave: false, //required
-      saveUninitialized: false //required
-  })
-)
+// // Sessions
+// app.use(
+//   session({
+//       secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
+//       store: new MongoStore({ mongooseConnection: dbConnection, useNewUrlParser: true }),
+//       resave: false, //required
+//       saveUninitialized: false //required
+//   })
+// )
 
-// Passport
-app.use(passport.initialize())
-app.use(passport.session()) // calls the deserializeUser
+// // Passport
+// app.use(passport.initialize())
+// app.use(passport.session()) // calls the deserializeUser
 
 // Routes
 app.use('/user', user)
