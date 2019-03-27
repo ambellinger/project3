@@ -7,11 +7,13 @@ export default {
 //     return axios.get("/api/google", { params: { q: "title:" + query} });
 //   },
   
-  // Gets all books
+  // Gets all buildings
   getBuildings: function() {
     return axios.get("/api/buildings");
   },
-
+getList: function(){
+  return axios.get("/api/list");
+},
  
   // Gets the book with the given id
   getBook: function(id) {

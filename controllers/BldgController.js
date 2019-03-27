@@ -2,12 +2,25 @@ const db = require("../models");
 
 // Defining methods for the buildings Controller
 module.exports = {
+ 
+
+
+
   findAll: function(req, res) {
     db.Building
       .find(req.query)
       .sort({ date: -1 })
       .then(dbBuilding => res.json(dbBuilding))
       .catch(err => res.status(422).json(err));
+  },
+ 
+  findList: function (req, res){
+    res.send("working for real NOW");
+ //   db.Building
+  //  .find({})
+  //   .distinct('neighborhood')
+  //   .then(dbBuilding => res.json(dbBuilding.neighborhood))
+  //   .catch(err => res.status(422).json(err));
   },
   // findById: function(req, res) {
   //   db.Building
