@@ -31,16 +31,15 @@ updateUser(userObject) {
 
 loadBuildings = () => {
     API.getBuildings()
-    .then(res => console.log(res.data, " this is res data"))
-      // .then(res =>
-      //   this.setState({ buildings: res.data},
-      //     console.log("I am logging " + res.data)
-      //   ))
+    .then(res => 
+      this.setState({ buildings: res.data},
+      console.log(res.data, " this is res data")
+      ))
       .catch(err => console.log(err));
       }; 
 
-    
       render() {
+        console.log(this.state.buildings, 'this is statebuildings')
         return (
             <div>
             <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -48,7 +47,6 @@ loadBuildings = () => {
            
     
             <div className="container">
-         
             {this.state.buildings.length ? (
               <div>
                 {this.state.buildings.map(buildings => (
