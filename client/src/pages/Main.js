@@ -31,11 +31,11 @@ updateUser(userObject) {
 
 loadBuildings = () => {
     API.getBuildings()
-    .then(res => console.log(res.data, " this is res data"))
-      // .then(res =>
-      //   this.setState({ buildings: res.data},
-      //     console.log("I am logging " + res.data)
-      //   ))
+    // .then(res => console.log(res.data, " this is res data"))
+      .then(res =>
+        this.setState({ buildings: res.data},
+          console.log("I am logging " + res.data)
+        ))
       .catch(err => console.log(err));
       }; 
 
