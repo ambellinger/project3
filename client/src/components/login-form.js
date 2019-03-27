@@ -26,7 +26,11 @@ class LoginForm extends Component {
         console.log('handleSubmit')
 
         axios
+<<<<<<< HEAD
             .post('//localhost:3001/user/login', {
+=======
+            .post('//localhost:3000/user/login', {
+>>>>>>> master
                 username: this.state.username,
                 password: this.state.password
             })
