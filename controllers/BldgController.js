@@ -15,12 +15,13 @@ module.exports = {
   },
  
   findList: function (req, res){
-    res.send("working for real NOW");
- //   db.Building
-  //  .find({})
-  //   .distinct('neighborhood')
-  //   .then(dbBuilding => res.json(dbBuilding.neighborhood))
-  //   .catch(err => res.status(422).json(err));
+    // res.send("working for real NOW");
+   db.Building
+    .distinct('neighborhood', function(err,response){
+      res.json(response)
+    })
+    // .then(dbBuilding => res.json(response))
+    // .catch(err => res.status(422).json(err));
   },
   // findById: function(req, res) {
   //   db.Building
