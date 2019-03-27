@@ -55,6 +55,7 @@ loadBuildings = () => {
                   booknum={buildings._id}
                   name={buildings.name}
                   architect={buildings.architect}
+                  rating={buildings.rating}
                   description={buildings.description}
                   image={buildings.image}
                   year={buildings.year}

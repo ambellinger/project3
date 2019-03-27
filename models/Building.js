@@ -8,6 +8,7 @@ const buildingSchema = new Schema({
   image: String,
   description: String,
   year: String,
+  rating: Number,
   date: { type: Date, default: Date.now },
   saved: {type: Boolean, default: false}
 });
