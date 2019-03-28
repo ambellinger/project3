@@ -17,7 +17,7 @@ export default {
  
   // Gets the buildings with the given neighborhood
   getHood: function(neighborhood) {
-    return axios.get("/api/buildings/neighborhood" + neighborhood);
+    return axios.get("/api/buildings/neighborhood/" + neighborhood);
   },
   // Deletes the book with the given id
   deleteBuilding: function(id) {

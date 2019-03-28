@@ -27,12 +27,15 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log("I am grabbing value of dropdown list" + event.target.value)
+    this.setState({ search: event.target.value });
     API.getHood(this.state.search)
       .then(res => {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data, error: "" }, console.log( res.data));
+        } console.log("I am the state of the search" + this.state.search)
+        //the res.data below is the data 
+        this.setState({ results: res.data, error: "" }, console.log( "this is the data that you need" , res.data));
       })
       .catch(err => this.setState({ error: err.message }));
   };
@@ -51,6 +54,7 @@ class Search extends Component {
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             neighborhood={this.state.neighborhood}
+            search={this.state.search}
           />
           {/* <SearchResults results={this.state.results} /> */}
         {/* </Container> */}

@@ -4,8 +4,8 @@ import "./style.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
   return (
-      <div className="form-group">
-        {/* <input
+    <div className="form-group">
+      {/* <input
           value={props.search}
           // onChange={props.handleInputChange}
           name="neighborhood"
@@ -15,17 +15,21 @@ function SearchForm(props) {
           placeholder="Type in a dog breed to begin"
           id="neighborhood"
         /> */}
-<select class="custom-select">
-          <option selected> Search by region </option>
+      <form onSubmit={props.handleFormSubmit}>
+        <select className="custom-select" value={props.search} onChange={props.handleInputChange}>
 
+          <option selected> Search by region </option>
           {props.neighborhood.map(neighborhood => (
-            <option value={props.search} key={neighborhood}>{neighborhood}</option> 
+            <option value={neighborhood} key={neighborhood}>{neighborhood}</option>
           ))}
         </select>
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+        <input type="submit" value="Submit" />
+
+       {/* <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
-        </button>
-      </div>
+        </button>  */}
+      </form> 
+    </div>
   );
 }
 
