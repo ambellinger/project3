@@ -19,7 +19,7 @@ function SearchForm(props) {
         />
 <select class="custom-select">
           {props.neighborhood.map(neighborhood => (
-            <option value={neighborhood} key={neighborhood} />
+            <option value={neighborhood} key={neighborhood}>{neighborhood}</option> 
           ))}
         </select>
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
