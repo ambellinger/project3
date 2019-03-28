@@ -11,8 +11,8 @@ export default {
   getBuildings: function() {
     return axios.get("/api/buildings");
   },
-getList: function(){
-  return axios.get("/api/list");
+ getList: function(){
+  return axios.get("/api/buildings/list");
 },
  
   // Gets the book with the given id

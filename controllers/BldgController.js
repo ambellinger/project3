@@ -13,7 +13,7 @@ module.exports = {
       .then(dbBuilding => res.json(dbBuilding))
       .catch(err => res.status(422).json(err));
   },
- 
+ //what is asking the database to get the neighborhood list
   findList: function (req, res){
     // res.send("working for real NOW");
    db.Building
