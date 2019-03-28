@@ -19,8 +19,8 @@ router.route("/")
   //   .get(BldgController.create)
 // Matches with "/api/books/:id"
 router
-  .route("/:id")
-  // .get(BldgController.findById)
+  .route("/neighborhood/:neighborhood")
+  .get(BldgController.findByHood)
   // .put(booksController.update)
   .delete(BldgController.remove)
   .post(BldgController.create)

@@ -23,12 +23,12 @@ module.exports = {
     // .then(dbBuilding => res.json(response))
     // .catch(err => res.status(422).json(err));
   },
-  // findById: function(req, res) {
-  //   db.Building
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  findByHood: function(req, res) {
+    db.Building
+      .find({"neighborhood": req.params.neighborhood } )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.Building
       .create(req.body)

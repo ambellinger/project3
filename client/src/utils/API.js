@@ -15,9 +15,9 @@ export default {
   return axios.get("/api/buildings/list");
 },
  
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/buildings/" + id);
+  // Gets the buildings with the given neighborhood
+  getHood: function(neighborhood) {
+    return axios.get("/api/buildings/neighborhood" + neighborhood);
   },
   // Deletes the book with the given id
   deleteBuilding: function(id) {
