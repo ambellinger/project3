@@ -1,30 +1,142 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
-import Jumbotron from "../components/Jumbotron"
+import Jumbotron from "../components/Jumbotron";
+import StarRatingComponent from 'react-star-rating-component';
 import { Input, TextArea, FormBtn } from "../components/Form";
+import API from "../utils/API";
 
 
 
-class New extends Component{
+class New extends Component {
+    state = {
+        name: "",
+        architect: "",
+        neighborhood: "",
+        address: "",
+        image: "",
+        description: "",
+        year: "",
+        rating: 0,
+
+    };
 
 
-render(){
-    return(
-<div>
-    <Nav/>
-    <Jumbotron/>
-<div class ="container">
-<h1> hello I will eventually have a form</h1>
-<Input/>
-<Input/>
-<Input/>
-<TextArea/>
-<FormBtn/>
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
 
-</div>
-</div>
-    )
-}
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.name) {
+            API.saveBuilding({
+                name: this.state.name,
+                architect: this.state.architect,
+                neighborhood: this.state.neighborhood,
+                address: this.state.address,
+                image: this.state.image,
+                description: this.state.description,
+                year: this.state.year,
+                rating: this.state.rating
+
+
+            })
+                .then(this.clearForm())
+
+                .catch(err => console.log(err));
+        }
+    };
+
+    
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({rating: nextValue});
+  }
+
+  changeRating(newRating, name) {
+    this.setState({
+      rating: newRating
+    });
+  }
+
+  clearForm = () => {
+      this.setState({
+        name: "",
+        architect: "",
+        neighborhood: "",
+        address: "",
+        image: "",
+        description: "",
+        year: "",
+        rating: 0,
+      })
+  }
+
+
+    render() {
+        return (
+            <div>
+                <Nav />
+                <Jumbotron />
+                <div class="container">
+                    <h1> Enter a New Building</h1>
+                    <Input
+                        value={this.state.name}
+                        onChange={this.handleInputChange}
+                        name="name"
+                        placeholder="Name of Building" />
+                    <Input
+                        value={this.state.architect}
+                        onChange={this.handleInputChange}
+                        name="architect"
+                        placeholder="Architect" />
+                    <Input
+                        value={this.state.neighborhood}
+                        onChange={this.handleInputChange}
+                        name="neighborhood"
+                        placeholder="Neighborhood" />
+                    <Input
+                        value={this.state.address}
+                        onChange={this.handleInputChange}
+                        name="address"
+                        placeholder="Address" />
+                    <Input
+                        value={this.state.image}
+                        onChange={this.handleInputChange}
+                        name="image"
+                        placeholder="Image URL" />
+
+                    <TextArea
+                        value={this.state.description}
+                        onChange={this.handleInputChange}
+                        name="description"
+                        placeholder="Description" />
+
+                    <Input
+                        value={this.state.year}
+                        onChange={this.handleInputChange}
+                        name="year"
+                        placeholder="Year" />
+
+
+<StarRatingComponent
+                  name="rating"
+                  starCount={10}
+                  value={this.state.rating}
+                  onStarClick={this.onStarClick.bind(this)}
+                />
+                    <FormBtn
+                        disabled={!(this.state.name)}
+                        onClick={this.handleFormSubmit}
+                    >
+                        Submit
+              </FormBtn>
+
+                </div>
+            </div>
+        )
+    }
 
 }
 export default New;
