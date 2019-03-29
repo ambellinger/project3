@@ -6,7 +6,7 @@ const userRoutes = require("./user");
 router.use("/buildings", buildingRoutes);
 router.use("/saved", buildingRoutes);
 router.use("/new", buildingRoutes);
-router.use("/signup",userRoutes);
+router.use("/users",userRoutes);
 //  routes
 // router.use("/input", buildingRoutes);
 
