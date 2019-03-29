@@ -17,7 +17,7 @@ class Nav extends Component {
     logout(event) {
         event.preventDefault()
         console.log('logging out')
-        axios.post('//localhost:3001/user/logout').then(response => {
+        axios.post('//localhost:8080/user/logout').then(response => {
           console.log(response.data)
           if (response.status === 200) {
             this.props.updateUser({
@@ -39,10 +39,7 @@ render(){
   return (
 
     <nav className="navbar">
-      <a className="navbar-brand" href="/">
-        Explore Chicago Architecture
-      </a>
-      <a className="nav-item" href="/saved">My Saved Buildings</a>
+      <a className="nav-item" href="/saved">saved buildings</a>
       <div>
       {loggedIn ? (
                             <section className="navbar-section">

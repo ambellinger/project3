@@ -1,16 +1,28 @@
-nav { background-color: black; }
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+
+nav { 
+  background-color:  black;
+}
 
 .navbar-brand{
-    color:white;
-
+    color: white;
 
 }
 
-.nav-item{color:white;}
+.nav-item{
+  color: white;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 18px;
+}
 
- a:hover{ 
-     
-          color:  #716C6B;
-          opacity:1;
-        text-decoration: none;
+.text-secondary {
+  color: white!important;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 18px;
+}
+
+a:hover{ 
+  text-decoration: none!important;
+  color: white;
 };

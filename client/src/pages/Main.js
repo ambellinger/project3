@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Saved from "../components/Saved";
+import Footer from "../components/Footer";
 import API from "../utils/API";
 
 
@@ -78,6 +79,7 @@ loadBuildings = () => {
     
           </div>
           </div>
+        
     
         )
       }}
