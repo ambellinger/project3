@@ -19,8 +19,10 @@
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "request": "^2.88.0",
     "react-star-rating-component": "^1.4.1",
     "spectre.css": "^0.5.8"
+
   },
   "scripts": {
     "start": "react-scripts start",

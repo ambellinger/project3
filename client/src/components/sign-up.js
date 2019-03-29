@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+// import request from 'request'
+import API from '../utils/API'
 class Signup extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             username: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            signedUp: false,
+            redirectTo: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -16,35 +19,83 @@ class Signup extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+
+
+
+    }
+    loadBuilding() {
+        API.checkUser({
+            username: this.state.username
+        })
+            .then(res => {
+
+                console.log("data:" + res.data + " state username:" + this.state.username);
+                //  window.location.href="/";
+
+            })
+            .catch(err => console.log(err));
+
+
+
     }
     handleSubmit(event) {
-        console.log('sign-up handleSubmit, username: ')
-        console.log(this.state.username)
+        //    console.log('sign-up handleSubmit, username: ')
+        //  console.log(this.state.username)
         event.preventDefault()
 
+
+
+
         //request to server to add a new username/password
-        axios
-            .post('//localhost:3000/user/', {
-                username: this.state.username,
-                password: this.state.password
-            })
-            .then(response => {
-                console.log(response)
-                if (!response.data.errmsg) {
-                    console.log('successful signup')
-                    alert("you did it")
-                    this.setState({
-                        //redirect to login page
-                        redirectTo: '/login'
-                    })
-                } else {
-                    console.log('username already taken')
-                }
-            })
-            .catch(error => {
-                console.log('signup error: ')
-                console.log(error)
-            })
+        if (this.state.username && this.state.password) {
+
+
+
+            // const dataObject={username: this.state.username };
+
+
+            //    request
+            //    .get('http://mysite.com/doodle.png')
+            //    .on('error', function(err) {
+            //      console.log(err)
+            //    })
+            //    .pipe(fs.createWriteStream('doodle.png'))
+
+
+            // axios.get('/api/users/check',dataObject)
+            // .then(function (response) {
+            //     console.log("data:" +response );
+            // })
+            // .catch(function (error) {
+            //   console.log(error);
+            // });
+
+            API.checkUser({ username: this.state.username })
+                .then(response => {
+                    console.log("info: " + response.data);
+                    if (!response.data) {
+                        API.saveUser({
+                            username: this.state.username,
+                            password: this.state.password
+                        })
+                            .then(res => this.loadBuilding())
+                            .catch(err => console.log(err));
+                        window.location.href = "/";
+
+                     
+                    }
+                   
+
+                })
+                .catch(err => console.log(err));
+
+
+
+        }
+
+
+
+
     }
 
     render() {

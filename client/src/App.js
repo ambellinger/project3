@@ -63,8 +63,8 @@ return (
  
                 {/* Routes to different components */}
                 <Route exact path="/" component={Main} />
-                <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
-                <Route path="/signup" render={() => <Signup />} />
+                <Route exact path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
+                <Route exact path="/signup" render={() => <Signup />} />
 </Switch>
 {this.state.loggedIn && <p>Welcome, {this.state.username}!</p>}
 

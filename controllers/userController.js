@@ -8,7 +8,9 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
     create: function (req, res) {
-        const { username, password } = req.body
+       // const { username, password } = req.body
+       const username =req.body.username;
+       const password =req.body.password;
         // ADD VALIDATION
 
 
@@ -38,28 +40,21 @@ module.exports = {
     findUser: function (req, res) {
 
         dB.User.findOne({
-           
-                username: req.body.username.trim()
-              
-       }).then(function (user) {
-           if (!user) {
-                res.json({message : "user not found"})
-           } else {
-  bcrypt.compare(req.body.password, user.password, function (err, result) {
-          if (result == true) {
-              res.json(result)
+
+            username: req.body.username
+        }).then(function (user) {
+          if (!user) {
+            res.json( false);
           } else {
-            res.json({message  : "not found"})
+            bcrypt.compare(req.body.password, user.password, function (err, result) {
+              if (result === true) {
+                res.json(result);
+              } else {
+                res.json(false);
+              }
+            });
           }
-       
-       
         });
-
-
-
-
-       }
-    });
 
         // ', (err, user) => {
         // 	// if (err) {
@@ -78,6 +73,21 @@ module.exports = {
         // })
 
 
+    },
+    checkusername:function (req, res) {
+        dB.User.findOne({
+
+            username: req.body.username 
+        }).then(user=> {
+            
+            if(user)
+             res.send(true)
+             else
+             res.send(false)
+        }
+   
+        
+        );
     }
 }
 

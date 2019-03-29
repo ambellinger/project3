@@ -2,18 +2,17 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 // Matches with "/api/books"
-router.route("/")
-
+router.route("/:signup")
   .post(userController.create);
 
 
   // Matches with "/api/books"
-router.route("/:login")
+router.route("/")
 // "this route is working"
 //  .get(userController.findUser)
  .post(userController.findUser);
 
-
-  
+ router.route("/check/:validate")
+.post(userController.checkusername)
 
 module.exports = router;
