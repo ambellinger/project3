@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 // import SearchResults from "../components/SearchResults";
-
+import Saved from "../components/Saved"
 class Search extends Component {
   state = {
     search: "",
@@ -42,25 +42,41 @@ class Search extends Component {
   render() {
     return (
       <div>
-        {/* <Container style={{ minHeight: "80%" }}> */}
+      
           <h1 className="text-center">Discover</h1>
-          {/* <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-          >
-            {this.state.error}
-          </Alert> */}
+        
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             neighborhood={this.state.neighborhood}
             search={this.state.search}
           />
-          {/* <SearchResults results={this.state.results} /> */}
-        {/* </Container> */}
-      </div>
-    );
-  }
-}
+         
+            <div>
+              {this.state.results.map(results =>(
 
+            <Saved
+            identification={results._id}
+            name={results.name}
+            architect={results.architect}
+            rating={results.rating}
+            description={results.description}
+            image={results.image}
+            year={results.year}
+            clickHandler={this.deleteBook}
+            />
+              
+
+
+          ))}
+</div>            
+
+         </div> 
+        )}
+     
+    
+    
+    }
+
+      
 export default Search;
