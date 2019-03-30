@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
+import Jumbotron from "../components/Jumbotron"
+import Nav from "../components/Nav"
+
 // import SearchResults from "../components/SearchResults";
 import Saved from "../components/Saved"
 class Search extends Component {
@@ -42,10 +45,9 @@ class Search extends Component {
   render() {
     return (
       <div>
-      
-          <h1 className="text-center">Discover</h1>
+      <Nav/>
         
-          <SearchForm
+          <Jumbotron
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             neighborhood={this.state.neighborhood}
