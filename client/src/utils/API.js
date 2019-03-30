@@ -2,11 +2,7 @@ import axios from "axios";
 
 
 export default {
-  //perform search
-//   search: function(query) {
-//     return axios.get("/api/google", { params: { q: "title:" + query} });
-//   },
-  
+
   // Gets all buildings
   getBuildings: function() {
     return axios.get("/api/buildings");
@@ -18,7 +14,7 @@ export default {
   // Gets the buildings with the given neighborhood
   getHood: function(neighborhood) {
     return axios.get("/api/buildings/neighborhood/" + neighborhood);
-
+  },
   // Gets all books
   getHomepage: function() {
     return axios.get("/");
