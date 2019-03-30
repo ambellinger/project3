@@ -44,7 +44,6 @@ loadBuildings = () => {
         return (
             <div>
             <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-            <Jumbotron/>
            
     
             <div className="container">

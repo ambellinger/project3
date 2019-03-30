@@ -58,13 +58,13 @@ return (
 <Router>
 
 <Switch>
-<Route exact path="/" render={() => <Search loggedIn={this.state.loggedIn}/>} />
+<Route exact path="/" render={() => <Main loggedIn={this.state.loggedIn}/>} />
 <Route exact path="/new"component ={New}/>
 
 
  
                 {/* Routes to different components */}
-                <Route exact path="/" component={Search} />
+                <Route exact path="/" component={Main} />
                 <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
                 <Route path="/signup" render={() => <Signup />} />
                 <Route path="/search" render={() => <Search />} />
