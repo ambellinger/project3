@@ -7,6 +7,7 @@ import axios from 'axios';
 import API from "../utils/API";
 import  App from "../../src/App.js";
 import Main from "../pages/Main"
+import "./login.css";
 
 import  Nav from "../components/Nav";
 class LoginForm extends Component {
@@ -81,12 +82,14 @@ class LoginForm extends Component {
               //Kurt, if loggedin is unsuccessful, it will  this.state.redirectTo to  null and render the login page again 
             return (
                 <div>
-                    <h4>Login</h4>
+                    <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                    <div className="formSection">
+                    <h4 id="loginTitle">Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="username">
-                                    Username
+                                    Username:
                                 </label>
                             </div>
                             <div className="col-3 col-mr-auto">
@@ -95,7 +98,7 @@ class LoginForm extends Component {
                                     type="text"
                                     id="username"
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder=""
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
@@ -110,7 +113,7 @@ class LoginForm extends Component {
                             <div className="col-3 col-mr-auto">
                                 <input
                                     className="form-input"
-                                    placeholder="password"
+                                    placeholder=""
                                     type="password"
                                     name="password"
                                     value={this.state.password}
@@ -122,6 +125,7 @@ class LoginForm extends Component {
                             <div className="col-7" />
                             <button
                                 className="btn btn-primary col-1 col-mr-auto"
+                                id="buttonLogin"
                                 onClick={this.handleSubmit}
                                 type="submit"
                             >
@@ -129,6 +133,7 @@ class LoginForm extends Component {
                             </button>
                         </div>
                     </form>
+                    </div>
                 </div>
             )
         }

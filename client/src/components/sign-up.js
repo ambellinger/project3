@@ -112,9 +112,9 @@ class Signup extends Component {
                             .catch(err => console.log(err));
                         window.location.href = "/";
 
-                     
+
                     }
-                   
+
 
                 })
                 .catch(err => console.log(err));
@@ -132,53 +132,55 @@ class Signup extends Component {
     render() {
         return (
             <div className="SignupForm">
-            <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-                <h4>Sign up</h4>
-                <form className="form-horizontal">
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="username">
-                                Username:
+                <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                <div id="mainSignupForm">
+                    <h4 id="singupTitle">Sign up</h4>
+                    <form className="form-horizontal">
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="username">
+                                    Username:
                             </label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input
+                                    className="form-input"
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder=""
+                                    value={this.state.username}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
-                        <div className="col-3 col-mr-auto">
-                            <input
-                                className="form-input"
-                                type="text"
-                                id="username"
-                                name="username"
-                                placeholder=""
-                                value={this.state.username}
-                                onChange={this.handleChange}
-                            />
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="password">
+                                    Password:{' '}
+                                </label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input
+                                    className="form-input"
+                                    placeholder=""
+                                    type="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="password">
-                                Password:{' '}
-                            </label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input
-                                className="form-input"
-                                placeholder=""
-                                type="password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group ">
-                        <div className="col-7" />
-                        <button className="btn btn-primary col-1 col-mr-auto" id="buttonSignup" onClick={this.handleSubmit} type="submit">
-                            Sign up
+                        <div className="form-group ">
+                            <div className="col-7" />
+                            <button className="btn btn-primary col-1 col-mr-auto" id="buttonSignup" onClick={this.handleSubmit} type="submit">
+                                Sign up
                         </button>
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
-         
+
         )
     }
 }
