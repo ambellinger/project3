@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import "/Users/sr/working/project3/client/src/components/login.css";
+
 
 class LoginForm extends Component {
     constructor() {
@@ -26,7 +30,7 @@ class LoginForm extends Component {
         console.log('handleSubmit')
 
         axios
-            .post('//localhost:3000/user/login', {
+            .post('//localhost:8080/user/login', {
                 username: this.state.username,
                 password: this.state.password
             })
@@ -61,12 +65,15 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
+                    <div>
+                    <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                    </div>
                     <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="username">
-                                    Username
+                                    Username:
                                 </label>
                             </div>
                             <div className="col-3 col-mr-auto">
@@ -75,7 +82,7 @@ class LoginForm extends Component {
                                     type="text"
                                     id="username"
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder=""
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
@@ -90,7 +97,7 @@ class LoginForm extends Component {
                             <div className="col-3 col-mr-auto">
                                 <input
                                     className="form-input"
-                                    placeholder="password"
+                                    placeholder=""
                                     type="password"
                                     name="password"
                                     value={this.state.password}
@@ -98,9 +105,9 @@ class LoginForm extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="form-group ">
+                        <div className="form-group">
                             <div className="col-7" />
-                            <button
+                            <button id="buttonLogin"
                                 className="btn btn-primary col-1 col-mr-auto"
                                 onClick={this.handleSubmit}
                                 type="submit"

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import "/Users/sr/working/project3/client/src/components/signup.css";
 
 class Signup extends Component {
     constructor() {
@@ -24,7 +27,7 @@ class Signup extends Component {
 
         //request to server to add a new username/password
         axios
-            .post('//localhost:3000/user/', {
+            .post('//localhost:8080/user/', {
                 username: this.state.username,
                 password: this.state.password
             })
@@ -50,12 +53,13 @@ class Signup extends Component {
     render() {
         return (
             <div className="SignupForm">
+            <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
                 <h4>Sign up</h4>
                 <form className="form-horizontal">
                     <div className="form-group">
                         <div className="col-1 col-ml-auto">
                             <label className="form-label" htmlFor="username">
-                                Username
+                                Username:
                             </label>
                         </div>
                         <div className="col-3 col-mr-auto">
@@ -64,7 +68,7 @@ class Signup extends Component {
                                 type="text"
                                 id="username"
                                 name="username"
-                                placeholder="Username"
+                                placeholder=""
                                 value={this.state.username}
                                 onChange={this.handleChange}
                             />
@@ -79,7 +83,7 @@ class Signup extends Component {
                         <div className="col-3 col-mr-auto">
                             <input
                                 className="form-input"
-                                placeholder="password"
+                                placeholder=""
                                 type="password"
                                 name="password"
                                 value={this.state.password}
@@ -89,12 +93,13 @@ class Signup extends Component {
                     </div>
                     <div className="form-group ">
                         <div className="col-7" />
-                        <button className="btn btn-primary col-1 col-mr-auto" onClick={this.handleSubmit} type="submit">
+                        <button className="btn btn-primary col-1 col-mr-auto" id="buttonSignup" onClick={this.handleSubmit} type="submit">
                             Sign up
                         </button>
                     </div>
                 </form>
             </div>
+         
         )
     }
 }
