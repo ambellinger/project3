@@ -7,10 +7,18 @@ export default {
 //     return axios.get("/api/google", { params: { q: "title:" + query} });
 //   },
   
-  // Gets all books
+  // Gets all buildings
   getBuildings: function() {
     return axios.get("/api/buildings");
   },
+ getList: function(){
+  return axios.get("/api/buildings/list");
+},
+ 
+  // Gets the buildings with the given neighborhood
+  getHood: function(neighborhood) {
+    return axios.get("/api/buildings/neighborhood/" + neighborhood);
+
   // Gets all books
   getHomepage: function() {
     return axios.get("/");

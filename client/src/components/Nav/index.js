@@ -120,10 +120,7 @@ render(){
   return (
 
     <nav className="navbar">
-      <a className="navbar-brand" href="/">
-        Explore Chicago Architecture
-      </a>
-      <a className="nav-item" href="/saved">My Saved Buildings</a>
+      <a className="nav-item" href="/saved">saved buildings</a>
       <div>
 
         {/* Kurt, it will look for loggedIn value that was stored in sessionStorage, if it is true, it will show logout only

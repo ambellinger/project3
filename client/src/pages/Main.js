@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Saved from "../components/Saved";
+import Footer from "../components/Footer";
 import API from "../utils/API";
 
 
@@ -44,8 +45,9 @@ loadBuildings = () => {
         console.log(this.state.buildings, 'this is statebuildings')
         return (
             <div>
-            <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-            <Jumbotron/>
+          <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+
+              <Jumbotron></Jumbotron>
            
     
             <div className="container">
@@ -81,6 +83,7 @@ loadBuildings = () => {
     
           </div>
           </div>
+        
     
         )
       }}

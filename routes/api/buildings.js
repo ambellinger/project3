@@ -1,11 +1,16 @@
 const router = require("express").Router();
 const BldgController = require("../../controllers/BldgController");
 
-// Matches with "/api/books"
+// Matches with "/api/buildings"
+
+router.route("/:list")
+.get(BldgController.findList)
+
 router.route("/")
 // "this route is working"
   .get(BldgController.findAll)
-  .post(BldgController.create);
+  .post(BldgController.create)
+
 
   // router.route("/saved")
   // .get(BldgController.findAll)
@@ -14,11 +19,11 @@ router.route("/")
   //   .get(BldgController.create)
 // Matches with "/api/books/:id"
 router
-  .route("/:id")
-  // .get(BldgController.findById)
+  .route("/neighborhood/:neighborhood")
+  .get(BldgController.findByHood)
   // .put(booksController.update)
   .delete(BldgController.remove)
-  .post(BldgController.create);
+  .post(BldgController.create)
 
   
 

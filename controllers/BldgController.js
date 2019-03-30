@@ -2,6 +2,10 @@ const db = require("../models");
 
 // Defining methods for the buildings Controller
 module.exports = {
+ 
+
+
+
   findAll: function(req, res) {
     db.Building
       .find(req.query)
@@ -9,12 +13,22 @@ module.exports = {
       .then(dbBuilding => res.json(dbBuilding))
       .catch(err => res.status(422).json(err));
   },
-  // findById: function(req, res) {
-  //   db.Building
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+ //what is asking the database to get the neighborhood list
+  findList: function (req, res){
+    // res.send("working for real NOW");
+   db.Building
+    .distinct('neighborhood', function(err,response){
+      res.json(response)
+    })
+    // .then(dbBuilding => res.json(response))
+    // .catch(err => res.status(422).json(err));
+  },
+  findByHood: function(req, res) {
+    db.Building
+      .find({"neighborhood": req.params.neighborhood } )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.Building
       .create(req.body)

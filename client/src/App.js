@@ -4,9 +4,11 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './App.css';
 import Main from "./pages/Main"
 import New from "./pages/New"
+import Search from './pages/Search'
 import axios from 'axios'
 import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
+
 
 class App extends Component{
   constructor() {
@@ -63,8 +65,11 @@ return (
  
                 {/* Routes to different components */}
                 <Route exact path="/" component={Main} />
-                <Route exact path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
-                <Route exact path="/signup" render={() => <Signup />} />
+                <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
+                <Route path="/signup" render={() => <Signup />} />
+                <Route path="/search" render={() => <Search />} />
+
+
 </Switch>
 {this.state.loggedIn && <p>Welcome, {this.state.username}!</p>}
 

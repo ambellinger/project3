@@ -1,6 +1,6 @@
-// import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
-// import axios from 'axios';
+
+
+
 // import API from "../utils/API";
 // import  App from "../../src/App.js";
 // import Main from "../pages/Main"
@@ -185,9 +185,12 @@ class LoginForm extends Component {
         event.preventDefault()
         console.log('handleSubmit')
 
+        axios
+            .post('//localhost:3001/user/login', {
 
         if (this.state.username && this.state.password) {
             API.getUser({
+
                 username: this.state.username,
                 password: this.state.password
             })
@@ -262,12 +265,15 @@ class LoginForm extends Component {
               //Kurt, if loggedin is unsuccessful, it will  this.state.redirectTo to  null and render the login page again 
             return (
                 <div>
+                    <div>
+                    <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                    </div>
                     <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="username">
-                                    Username
+                                    Username:
                                 </label>
                             </div>
                             <div className="col-3 col-mr-auto">
@@ -276,7 +282,7 @@ class LoginForm extends Component {
                                     type="text"
                                     id="username"
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder=""
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
@@ -291,7 +297,7 @@ class LoginForm extends Component {
                             <div className="col-3 col-mr-auto">
                                 <input
                                     className="form-input"
-                                    placeholder="password"
+                                    placeholder=""
                                     type="password"
                                     name="password"
                                     value={this.state.password}
@@ -299,9 +305,9 @@ class LoginForm extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="form-group ">
+                        <div className="form-group">
                             <div className="col-7" />
-                            <button
+                            <button id="buttonLogin"
                                 className="btn btn-primary col-1 col-mr-auto"
                                 onClick={this.handleSubmit}
                                 type="submit"
