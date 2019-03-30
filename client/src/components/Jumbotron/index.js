@@ -13,7 +13,6 @@ function Jumbotron(props) {
     <h2>EXPLORE CHICAGO</h2>
     <h1>architecture</h1>
     
-    <div className="form-group">
       {/* <input
           value={props.search}
           // onChange={props.handleInputChange}
@@ -24,7 +23,7 @@ function Jumbotron(props) {
           placeholder="Type in a dog breed to begin"
           id="neighborhood"
         /> */}
-      <form onSubmit={props.handleFormSubmit}>
+      {/* <form onSubmit={props.handleFormSubmit}>
         <select className="custom-select" value={props.search} onChange={props.handleInputChange}>
 
           <option selected> Search by region </option>
@@ -32,13 +31,11 @@ function Jumbotron(props) {
             <option value={neighborhood} key={neighborhood}>{neighborhood}</option>
           ))}
         </select>
-        <input type="submit" value="Submit" />
-<Saved/>
+        <input type="submit" value="Submit" /> */}
        {/* <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
         </button>  */}
-      </form> 
-    </div>
+      {/* </form>  */}
     </div>
   );
 }

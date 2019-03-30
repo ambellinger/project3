@@ -43,7 +43,9 @@ loadBuildings = () => {
         console.log(this.state.buildings, 'this is statebuildings')
         return (
             <div>
-            <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+          <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+
+              <Jumbotron></Jumbotron>
            
     
             <div className="container">

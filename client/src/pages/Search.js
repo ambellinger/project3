@@ -45,9 +45,11 @@ class Search extends Component {
   render() {
     return (
       <div>
-      <Nav/>
+      <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+
+        <Jumbotron/>
         
-          <Jumbotron
+          <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             neighborhood={this.state.neighborhood}

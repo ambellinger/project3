@@ -25,7 +25,6 @@ function SearchForm(props) {
           ))}
         </select>
         <input type="submit" value="Submit" />
-<Saved/>
        {/* <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
           Search
         </button>  */}
