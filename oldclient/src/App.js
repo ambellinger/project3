@@ -29,7 +29,7 @@ updateUser(userObject) {
 
 getUser() {
   axios
-      .get('//localhost:8080/user')
+      .get('//localhost:3001/user')
       .then(response => {
           console.log('Get user response: ')
           console.log(response.data)

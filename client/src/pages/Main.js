@@ -8,10 +8,10 @@ import API from "../utils/API";
 
 
 class Main extends Component{
-  constructor() {
+  constructor(props) {
     super()
     this.state = {
-        loggedIn: false,
+        
         buildings: []
     }
 
@@ -21,8 +21,10 @@ class Main extends Component{
     
 
 componentDidMount(){
+  
+  console.log("login:"+     sessionStorage.getItem("loggedIn"))
     this.loadBuildings()
-    this.setState({loggedIn: this.props.loggedIn})
+    this.setState({loggedIn: this.state.loggedIn})
     
 }
 
@@ -56,6 +58,7 @@ loadBuildings = () => {
                   booknum={buildings._id}
                   name={buildings.name}
                   architect={buildings.architect}
+                  rating={buildings.rating}
                   description={buildings.description}
                   image={buildings.image}
                   year={buildings.year}

@@ -2,15 +2,18 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import API from "../utils/API"
 import "/Users/sr/working/project3/client/src/components/signup.css";
 
 class Signup extends Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             username: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            signedUp: false,
+            redirectTo: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -19,15 +22,36 @@ class Signup extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+
+
+
+    }
+    loadBuilding() {
+        API.checkUser({
+            username: this.state.username
+        })
+            .then(res => {
+
+                console.log("data:" + res.data + " state username:" + this.state.username);
+                //  window.location.href="/";
+
+            })
+            .catch(err => console.log(err));
+
+
+
     }
     handleSubmit(event) {
-        console.log('sign-up handleSubmit, username: ')
-        console.log(this.state.username)
+        //    console.log('sign-up handleSubmit, username: ')
+        //  console.log(this.state.username)
         event.preventDefault()
+
+
+
 
         //request to server to add a new username/password
         axios
-            .post('//localhost:8080/user/', {
+            .post('//localhost:3001/user/', {
                 username: this.state.username,
                 password: this.state.password
             })
