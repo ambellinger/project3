@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import "/Users/sr/working/project3/client/src/components/signup.css";
+import "./signup.css";
 
 class Signup extends Component {
     constructor() {
@@ -27,7 +27,7 @@ class Signup extends Component {
 
         //request to server to add a new username/password
         axios
-            .post('//localhost:8080/user/', {
+            .post('//localhost:3001/user/', {
                 username: this.state.username,
                 password: this.state.password
             })

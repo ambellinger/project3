@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import "/Users/sr/working/project3/client/src/components/login.css";
+import "./login.css";
 
 
 class LoginForm extends Component {
@@ -30,7 +30,7 @@ class LoginForm extends Component {
         console.log('handleSubmit')
 
         axios
-            .post('//localhost:8080/user/login', {
+            .post('//localhost:3001/user/login', {
                 username: this.state.username,
                 password: this.state.password
             })
