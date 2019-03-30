@@ -8,7 +8,7 @@ router.use("/buildings", buildingRoutes);
 router.use("/neighborhood", buildingRoutes);
 router.use("/saved", buildingRoutes);
 router.use("/new", buildingRoutes);
-router.use("/signup",userRoutes);
+router.use("/users",userRoutes);
 //  routes
 // router.use("/input", buildingRoutes);
 

@@ -6,7 +6,8 @@ import "../Saved/style.css"
 class Saved extends Component {
   render() {
     return (
-      <div class="card">
+
+      <div className ="card">
 
         <h2 class="buildingName"><a href={this.props.link}>{this.props.name}</a></h2>
         <h3 class="architectName">{this.props.architect}</h3>

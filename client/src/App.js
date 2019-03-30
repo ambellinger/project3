@@ -69,6 +69,7 @@ return (
                 <Route path="/signup" render={() => <Signup />} />
                 <Route path="/search" render={() => <Search />} />
 
+
 </Switch>
 {this.state.loggedIn && <p>Welcome, {this.state.username}!</p>}
 
