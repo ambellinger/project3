@@ -1,13 +1,16 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
+const Building = require('./Building');
+
 mongoose.promise = Promise
 
 // Define userSchema
 const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
-	password: { type: String, unique: false, required: false }
+	password: { type: String, unique: false, required: false },
+	buildings:[Building.schema]
 
 })
 
