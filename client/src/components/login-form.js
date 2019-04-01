@@ -1,14 +1,23 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
 
+
+
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+import API from "../utils/API";
+import  App from "../../src/App.js";
+import Main from "../pages/Main"
+import "./login.css";
+
+import  Nav from "../components/Nav";
 class LoginForm extends Component {
     constructor() {
         super()
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            redirectTo: null,
+            loggedIn:false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -25,30 +34,39 @@ class LoginForm extends Component {
         event.preventDefault()
         console.log('handleSubmit')
 
-        axios
-            .post('//localhost:3000/user/login', {
+
+        if (this.state.username && this.state.password) {
+            API.getUser({
                 username: this.state.username,
                 password: this.state.password
             })
-            .then(response => {
-                console.log('login response: ')
-                console.log(response)
-                if (response.status === 200) {
-                    // update App.js state
-                    this.props.updateUser({
-                        loggedIn: true,
-                        username: response.data.username
-                    })
-                    // update the state to redirect to home
-                    this.setState({
-                        redirectTo: '/'
-                    })
-                }
-            })
-            .catch(error => {
-                console.log('login error: ')
-                console.log(error)
-            })
+                .then(res => {
+                 
+                    console.log(" outoput:" + res.data);
+                    if (res.data){
+
+                     
+
+                        this.setState({loggedIn: true, redirectTo: "/"});
+        
+                        sessionStorage.setItem("loggedIn","true");
+                       
+                    }
+                    else{
+
+                        alert("incorrect password");
+
+                        this.setState({loggedIn: false, redirectTo: null });
+                        sessionStorage.setItem("loggedIn","false");
+                    }
+                  
+
+
+                })
+                .catch(err => console.log(err));
+        }
+
+       
     }
 
     updateUser(userObject) {
@@ -56,17 +74,22 @@ class LoginForm extends Component {
     }
 
     render() {
+
+        //Kurt, it loggedin is successful, it will set this.state.redirectTo to '/'  and go to the homepage 
         if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
+            return   <Redirect exact path="/" render={() => <Main loggedIn={this.state.loggedIn}/>} /> 
         } else {
+              //Kurt, if loggedin is unsuccessful, it will  this.state.redirectTo to  null and render the login page again 
             return (
                 <div>
-                    <h4>Login</h4>
+                    <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                    <div className="formSection">
+                    <h4 id="loginTitle">Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="username">
-                                    Username
+                                    Username:
                                 </label>
                             </div>
                             <div className="col-3 col-mr-auto">
@@ -75,7 +98,7 @@ class LoginForm extends Component {
                                     type="text"
                                     id="username"
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder=""
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
@@ -90,7 +113,7 @@ class LoginForm extends Component {
                             <div className="col-3 col-mr-auto">
                                 <input
                                     className="form-input"
-                                    placeholder="password"
+                                    placeholder=""
                                     type="password"
                                     name="password"
                                     value={this.state.password}
@@ -102,6 +125,7 @@ class LoginForm extends Component {
                             <div className="col-7" />
                             <button
                                 className="btn btn-primary col-1 col-mr-auto"
+                                id="buttonLogin"
                                 onClick={this.handleSubmit}
                                 type="submit"
                             >
@@ -109,6 +133,7 @@ class LoginForm extends Component {
                             </button>
                         </div>
                     </form>
+                    </div>
                 </div>
             )
         }

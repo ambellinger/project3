@@ -80,7 +80,7 @@ class New extends Component {
         return (
             <div>
                 <Nav />
-                <Jumbotron />
+                {/* <Jumbotron /> */}
                 <div class="container">
                     <h1> Enter a New Building</h1>
                     <Input

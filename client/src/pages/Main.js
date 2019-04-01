@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Saved from "../components/Saved";
+import Footer from "../components/Footer";
 import API from "../utils/API";
 
 
 
 class Main extends Component{
-  constructor() {
+  constructor(props) {
     super()
     this.state = {
-        loggedIn: false,
+        
         buildings: [],
         googleAddress: ""
     }
@@ -21,8 +22,11 @@ class Main extends Component{
     
 
 componentDidMount(){
-     this.loadBuildings()
-    this.setState({loggedIn: this.props.loggedIn})
+  
+  console.log("login:"+     sessionStorage.getItem("loggedIn"))
+    this.loadBuildings()
+    this.setState({loggedIn: this.state.loggedIn})
+    
 }
 
 
@@ -43,8 +47,9 @@ loadBuildings = () => {
         console.log(this.state.buildings, 'this is statebuildings')
         return (
             <div>
-            <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-            <Jumbotron/>
+          <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+
+              <Jumbotron></Jumbotron>
            
     
             <div className="container">
@@ -82,6 +87,7 @@ loadBuildings = () => {
     
           </div>
           </div>
+        
     
         )
       }}
