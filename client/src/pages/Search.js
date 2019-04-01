@@ -10,6 +10,7 @@ class Search extends Component {
   state = {
     search: "",
     neighborhood: [],
+    address: [],
     results: [],
     error: ""
   };
@@ -38,8 +39,13 @@ class Search extends Component {
           throw new Error(res.data.message);
         } console.log("I am the state of the search" + this.state.search)
         //the res.data below is the data 
-        this.setState({ results: res.data, error: "" }, console.log( "this is the data that you need" , res.data));
+        this.setState({ results: res.data, error: "" }, console.log( "this is the data that you need" , res.data),
+      
+     
+        this.setState({address : res.data[0].address }),
+        console.log("address" + this.state.address));
       })
+      
       .catch(err => this.setState({ error: err.message }));
   };
   render() {

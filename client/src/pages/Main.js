@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Saved from "../components/Saved";
-import Footer from "../components/Footer";
+//import Footer from "../components/Footer";
 import API from "../utils/API";
 
 
@@ -26,7 +26,7 @@ componentDidMount(){
   
   console.log("login:"+     sessionStorage.getItem("loggedIn"))
     this.loadBuildings()
-    this.loadMaps()
+    // this.loadMaps()
     this.setState({loggedIn: this.state.loggedIn})
     
 }
@@ -35,6 +35,19 @@ componentDidMount(){
 updateUser(userObject) {
   this.setState(userObject)
 }
+
+    
+// loadMaps = () => {
+
+//   API.getGoogleMaps()
+//     .then(res => 
+//       console.log(res.data))
+//   // .then(res => 
+//   //   this.setState ({ googleMaps : res.data },
+//   //     console.log(res.data, "this is google res data")
+//   //   ))
+//       .catch(err => console.log(err));
+//     };
 
 loadBuildings = () => {
     API.getBuildings()
@@ -94,16 +107,16 @@ loadBuildings = () => {
         )
       }
     
-loadMaps = () => {
-  API.getGoogleMaps(this.state.googleAddress)
-    .then(res => 
-      console.log(res.data))
-  // .then(res => 
-  //   this.setState ({ googleMaps : res.data },
-  //     console.log(res.data, "this is google res data")
-  //   ))
-      .catch(err => console.log(err));
-    };
+// loadMaps = () => {
+//   API.getGoogleMaps()
+//     .then(res => 
+//       console.log(res.data))
+//   // .then(res => 
+//   //   this.setState ({ googleMaps : res.data },
+//   //     console.log(res.data, "this is google res data")
+//   //   ))
+//       .catch(err => console.log(err));
+//     };
     }
     
     export default Main;

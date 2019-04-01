@@ -7,7 +7,7 @@ module.exports = {
   findAll: function (req, res) {
     axios
     // .get("https://maps.googleapis.com/maps/api/geocode/json", { params: req.query })
-    .get("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDPvfH3ebuKwEMXvLPW7sihcXa9c9igoeU")
+    // .get("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=")
     .then(results => results.data)
     .then(results => res.json(results))
     .then(console.log(results))

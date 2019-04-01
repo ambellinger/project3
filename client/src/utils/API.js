@@ -12,8 +12,9 @@ export default {
 //   search: function(query) {
 //     return axios.get("/api/google", { params: { q: "address:" + query} + Api_Key });
 //   },
-getGoogleMaps: function(query) {
-  return axios.get("/api/googleMaps", { params: { q: "address:" + query} +  API_KEY });
+getGoogleMaps: function() {
+  // return axios.get("/api/googleMaps", { params: { q: "address:" + query} +  API_KEY });
+  return axios.get("/api/googleMaps");
 },
 
   
