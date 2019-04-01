@@ -3,7 +3,7 @@ import axios from "axios";
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 
-console.log(this.props.googleAddress);
+// console.log(this.props.googleAddress);
 export default {
   //Find GoogleMap
 
