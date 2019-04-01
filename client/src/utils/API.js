@@ -1,11 +1,21 @@
 import axios from "axios";
 
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
+
+console.log(this.props.googleAddress);
 export default {
-  //perform search
+  //Find GoogleMap
+
+//
+
 //   search: function(query) {
-//     return axios.get("/api/google", { params: { q: "title:" + query} });
+//     return axios.get("/api/google", { params: { q: "address:" + query} + Api_Key });
 //   },
+getGoogleMaps: function(query) {
+  return axios.get("/api/googleMaps", { params: { q: "address:" + query} +  API_KEY });
+},
+
   
   // Gets all books
   getBuildings: function() {

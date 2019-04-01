@@ -8,6 +8,15 @@ import axios from 'axios'
 import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 
+
+
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+
+// console.log("------------")
+// console.log(API_KEY)
+// console.log("------------")
+
+
 class App extends Component{
   constructor() {
     super()
@@ -31,8 +40,8 @@ getUser() {
   axios
       .get('//localhost:3001/user')
       .then(response => {
-          console.log('Get user response: ')
-          console.log(response.data)
+          // console.log('Get user response: ')
+          // console.log(response.data)
           if (response.data.user) {
               console.log('Get User: There is a user saved in the server session: ')
 

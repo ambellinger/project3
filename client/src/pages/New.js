@@ -30,6 +30,8 @@ class New extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+        var address = this.searchInputElement.value;
+        this.geocodeAddress(address);
         if (this.state.name) {
             API.saveBuilding({
                 name: this.state.name,
@@ -100,7 +102,10 @@ class New extends Component {
                         value={this.state.address}
                         onChange={this.handleInputChange}
                         name="address"
-                        placeholder="Address" />
+                        id="address"
+                        placeholder="Address"
+                        ref={this.setSearchInputElementReference}
+                         />
                     <Input
                         value={this.state.image}
                         onChange={this.handleInputChange}

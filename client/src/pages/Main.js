@@ -11,7 +11,8 @@ class Main extends Component{
     super()
     this.state = {
         loggedIn: false,
-        buildings: []
+        buildings: [],
+        googleAddress: ""
     }
 
     this.updateUser = this.updateUser.bind(this)
@@ -20,10 +21,10 @@ class Main extends Component{
     
 
 componentDidMount(){
-    this.loadBuildings()
+     this.loadBuildings()
     this.setState({loggedIn: this.props.loggedIn})
-    
 }
+
 
 updateUser(userObject) {
   this.setState(userObject)
@@ -47,10 +48,11 @@ loadBuildings = () => {
            
     
             <div className="container">
+
             {this.state.buildings.length ? (
               <div>
                 {this.state.buildings.map(buildings => (
-    
+                  
                   <Saved
                   booknum={buildings._id}
                   name={buildings.name}
@@ -60,6 +62,7 @@ loadBuildings = () => {
                   image={buildings.image}
                   year={buildings.year}
                   clickHandler={this.deleteBook}
+                  googleAddress = {buildings.address}
               
                   />
     
