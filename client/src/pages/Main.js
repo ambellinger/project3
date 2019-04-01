@@ -13,6 +13,7 @@ class Main extends Component{
     this.state = {
         
         buildings: [],
+        googleMaps: [],
         googleAddress: ""
     }
 
@@ -25,6 +26,7 @@ componentDidMount(){
   
   console.log("login:"+     sessionStorage.getItem("loggedIn"))
     this.loadBuildings()
+    this.loadMaps()
     this.setState({loggedIn: this.state.loggedIn})
     
 }
@@ -38,13 +40,13 @@ loadBuildings = () => {
     API.getBuildings()
     .then(res => 
       this.setState({ buildings: res.data},
-      console.log(res.data, " this is res data")
+      // console.log(res.data, " this is res data")
       ))
       .catch(err => console.log(err));
       }; 
 
       render() {
-        console.log(this.state.buildings, 'this is statebuildings')
+        // console.log(this.state.buildings, 'this is statebuildings')
         return (
             <div>
           <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -90,6 +92,18 @@ loadBuildings = () => {
         
     
         )
-      }}
+      }
+    
+loadMaps = () => {
+  API.getGoogleMaps(this.state.googleAddress)
+    .then(res => 
+      console.log(res.data))
+  // .then(res => 
+  //   this.setState ({ googleMaps : res.data },
+  //     console.log(res.data, "this is google res data")
+  //   ))
+      .catch(err => console.log(err));
+    };
+    }
     
     export default Main;

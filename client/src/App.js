@@ -10,17 +10,14 @@ import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 
 
-<<<<<<< HEAD
 
-const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+// const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 // console.log("------------")
 // console.log(API_KEY)
 // console.log("------------")
 
 
-=======
->>>>>>> master
 class App extends Component{
   constructor() {
     super()
