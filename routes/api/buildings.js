@@ -3,6 +3,12 @@ const BldgController = require("../../controllers/BldgController");
 
 // Matches with "/api/buildings"
 
+// router.route("/address/:address")
+// // .get(BldgController.getAddress)
+// .get(BldgController.getAddress)
+
+
+
 router.route("/:list")
 .get(BldgController.findList)
 

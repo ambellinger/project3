@@ -2,8 +2,13 @@ const router = require("express").Router();
 const googleController = require("../../controllers/googleController");
 
 // Matches with "/api/googleMaps"
-router.route("/")
-  .get(googleController.findAll);
+
+router.route("/googleMaps")
+// .get(BldgController.getAddress)
+.get(googleController.getAddress)
+
+// router.route("/")
+//   .get(googleController.findAll);
   
 
  
