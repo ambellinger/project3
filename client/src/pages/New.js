@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
-import Jumbotron from "../components/Jumbotron";
+// import Jumbotron from "../components/Jumbotron";
 import StarRatingComponent from 'react-star-rating-component';
 import { Input, TextArea, FormBtn, SelectList } from "../components/Form";
 import API from "../utils/API";

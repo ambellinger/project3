@@ -64,7 +64,7 @@ finduser: function(req, res){
 },
   update: function(req, res) {
     db.Building
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, req.body.saved)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

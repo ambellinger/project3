@@ -5,7 +5,7 @@ import Jumbotron from "../components/Jumbotron"
 import Nav from "../components/Nav"
 
 // import SearchResults from "../components/SearchResults";
-import Saved from "../components/Saved"
+import Searched from "../components/Searched"
 class Search extends Component {
   state = {
     search: "",
@@ -59,7 +59,7 @@ class Search extends Component {
             <div>
               {this.state.results.map(results =>(
 
-            <Saved
+            <Searched
             identification={results._id}
             name={results.name}
             architect={results.architect}
