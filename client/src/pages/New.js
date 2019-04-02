@@ -91,12 +91,16 @@ class New extends Component {
                         onChange={this.handleInputChange}
                         name="architect"
                         placeholder="Architect" />
-                    <SelectList/>
-                    <Input
-                        value={this.state.neighborhood}
-                        onChange={this.handleInputChange}
-                        name="neighborhood"
-                        placeholder="Neighborhood" />
+                    <SelectList onChange={this.handleInputChange}
+                    name="neighborhood"
+                    placeholder="Neighborhood">
+                    <option value= "Loop" key= "Loop">Loop</option>
+                    <option value = "South Side" key = "South Side" >South Side</option>
+                    <option value = "North Side" key="North Side">North Side</option>
+                    <option value = "Northwest Side" key = "Northwest Side">Northwest Side</option>
+                    <option value = "West Side" key= "West Side">West Side</option>
+                   </SelectList>
+             
                     <Input
                         value={this.state.address}
                         onChange={this.handleInputChange}

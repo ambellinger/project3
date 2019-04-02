@@ -12,13 +12,10 @@ export function Input(props) {
 export function SelectList(props){
   return(
 <div className="form-group">
-<label for="sel1">Select list:</label>
-  <select className="form-control" id="neighborhoods">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    </select>
+  <select className="form-control" id="neighborhoods"  {...props}/>
+  {/* <option selected> Enter your Neighborhood</option> */}
+   
+
 </div>
 );
 }
