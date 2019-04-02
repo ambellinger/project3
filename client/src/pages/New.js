@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import StarRatingComponent from 'react-star-rating-component';
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, TextArea, FormBtn, SelectList } from "../components/Form";
 import API from "../utils/API";
 
 
@@ -80,7 +80,7 @@ class New extends Component {
                 <Nav />
                 {/* <Jumbotron /> */}
                 <div class="container">
-                    <h1> Enter a New Building</h1>
+                    {/* <h1> Enter a New Building</h1> */}
                     <Input
                         value={this.state.name}
                         onChange={this.handleInputChange}
@@ -91,6 +91,7 @@ class New extends Component {
                         onChange={this.handleInputChange}
                         name="architect"
                         placeholder="Architect" />
+                    <SelectList/>
                     <Input
                         value={this.state.neighborhood}
                         onChange={this.handleInputChange}

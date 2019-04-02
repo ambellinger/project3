@@ -10,9 +10,12 @@ const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
 	password: { type: String, unique: false, required: false },
-	buildings:[Building.schema]
+	entries:[{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Building'
+	  }]
+});
 
-})
 
 // Define schema methods
 userSchema.methods = {

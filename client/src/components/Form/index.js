@@ -9,6 +9,19 @@ export function Input(props) {
     </div>
   );
 }
+export function SelectList(props){
+  return(
+<div className="form-group">
+<label for="sel1">Select list:</label>
+  <select className="form-control" id="neighborhoods">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    </select>
+</div>
+);
+}
 
 export function TextArea(props) {
   return (

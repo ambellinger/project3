@@ -11,7 +11,8 @@ router.route("/")
   .get(BldgController.findAll)
   .post(BldgController.create)
 
-
+router.route("/users/populateduser")
+.post(BldgController.finduser)
   // router.route("/saved")
   // .get(BldgController.findAll)
 
