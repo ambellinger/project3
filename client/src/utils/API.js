@@ -3,7 +3,7 @@ import axios from "axios";
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 export default {
-  //Find GoogleMap
+//Find GoogleMap
 
 //   search: function(query) {
 //     return axios.get("/api/google", { params: { q: "address:" + query} + Api_Key });
