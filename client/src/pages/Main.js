@@ -33,6 +33,7 @@ updateUser(userObject) {
 }
 
 loadBuildings = () => {
+  // alert(sessionStorage.getItem("userid"))
     API.getBuildings()
     .then(res => 
       this.setState({ buildings: res.data},
