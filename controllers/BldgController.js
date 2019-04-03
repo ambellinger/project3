@@ -40,7 +40,7 @@ module.exports = {
    db.Building
    .create(req.body)
    .then(function(dbBuilding) {
-      return db.User.findOneAndUpdate({}, { $push: { entries: dbBuilding._id } }, { new: true });
+      return db.User.findOneAndUpdate({_id: req.params.userid}, { $push: { entries: dbBuilding._id } }, { new: true });
   }) 
   .then(function(dbUser) {
     res.json(dbUser);
@@ -63,9 +63,10 @@ finduser: function(req, res){
     });
 },
   update: function(req, res) {
-    db.Building
-      .findOneAndUpdate({ _id: req.params.id }, req.body.saved)
-      .then(dbModel => res.json(dbModel))
+
+    console.log("building id", req.body._id, "userid" , req.params.userid);
+    db.User.findOneAndUpdate({_id: req.params.userid}, { $push: { entries: req.body._id } }, { new: true })
+    .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {

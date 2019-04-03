@@ -40,8 +40,10 @@ export default {
     return axios.delete("/api/buildings/" + id);
   },
 
-  update: function(id) {
-    return axios.delete("/api/buildigns/" + id);
+  update: function(buildingID,userid) {
+       alert("building" + buildingID + " " + "user"+ userid);
+
+    return axios.put("/api/saved/" + userid);
   },
   // Saves a book to the database
   saveBuilding: function(buildingData) {

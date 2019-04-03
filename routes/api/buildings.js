@@ -14,8 +14,9 @@ router.route("/")
 router.route("/users/populateduser")
 .post(BldgController.finduser)
 
-router.route("/saved")
-.get(BldgController.update)
+router.route("/buildings/:userid")
+.put(BldgController.update)
+
 
   // router.route("/new")
   //   .get(BldgController.create)
