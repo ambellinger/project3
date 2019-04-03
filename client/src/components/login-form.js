@@ -45,11 +45,12 @@ class LoginForm extends Component {
                     console.log(" outoput:" + res.data);
                     if (res.data){
 
-                     
-
+                        sessionStorage.setItem("loggedIn","true");
+                        sessionStorage.setItem("userid",res.data._id);
+                    //alert(res.data._id);
                         this.setState({loggedIn: true, redirectTo: "/"});
         
-                        sessionStorage.setItem("loggedIn","true");
+                       
                        
                     }
                     else{

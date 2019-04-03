@@ -8,7 +8,7 @@ import Search from './pages/Search'
 import axios from 'axios'
 import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
-
+import Saved from './pages/Saved'
 
 class App extends Component{
   constructor() {
@@ -68,7 +68,8 @@ return (
                 <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
                 <Route path="/signup" render={() => <Signup />} />
                 <Route path="/search" render={() => <Search />} />
-
+                <Route path="/viewsaved" render={() => <Saved />} />
+                
 
 </Switch>
 {this.state.loggedIn && <p>Welcome, {this.state.username}!</p>}

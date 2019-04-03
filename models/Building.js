@@ -10,7 +10,8 @@ const buildingSchema = new Schema({
   year: String,
   rating: Number,
   date: { type: Date, default: Date.now },
-  saved: {type: Boolean, default: false}
+  saved: {type: Boolean, default: false},
+  created_by: { type: String, required: true }
 });
 
 const Building = mongoose.model("Building", buildingSchema);
