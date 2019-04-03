@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import Jumbotron from "../components/Jumbotron"
-import Nav from "../components/Nav"
+// import Nav from "../components/Nav"
+import ViewSaved from "../components/ViewSaved"
+
 
 // import SearchResults from "../components/SearchResults";
-import Searched from "../components/Searched"
-class Search extends Component {
+// import Searched from "../components/Searched"
+class Saved extends Component {
   state = {
     search: "",
     neighborhood: [],
@@ -52,7 +54,8 @@ class Search extends Component {
   render() {
     return (
       <div>
-      <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+       
+      {/* <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
 
         <Jumbotron/>
         
@@ -66,7 +69,7 @@ class Search extends Component {
             <div>
               {this.state.results.map(results =>(
 
-            <Searched
+            <ViewSaved
             identification={results._id}
             name={results.name}
             architect={results.architect}
@@ -92,4 +95,4 @@ class Search extends Component {
     }
 
       
-export default Search;
+export default Saved;

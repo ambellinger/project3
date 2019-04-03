@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Footer from "../Footer"
-import "../Saved/style.css"
+import "../Searched/style.css"
 
 
-class Saved extends Component {
+class Searched extends Component {
   render() {
     return (
 
@@ -15,7 +15,7 @@ class Saved extends Component {
         <div id="description">
 
           <img src={this.props.image} alt="book_image" /><p>{this.props.description}</p>
-          {/* <button booknum={this.props.booknum} onClick ={this.props.clickHandler} type="button"className="btn btn-dark">Remove From Course Adoptions</button> */}
+          <button booknum={this.props.booknum} onClick ={this.props.clickHandler} type="button"className="btn btn-dark">Add to my Sites</button>
 
         </div>
       </div>
@@ -23,4 +23,4 @@ class Saved extends Component {
   }
 }
 
-export default Saved;
+export default Searched;

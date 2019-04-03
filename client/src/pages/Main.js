@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
-import Saved from "../components/Saved";
+import Searched from "../components/Searched";
 import Footer from "../components/Footer";
 import API from "../utils/API";
 
@@ -33,6 +33,7 @@ updateUser(userObject) {
 }
 
 loadBuildings = () => {
+  // alert(sessionStorage.getItem("userid"))
     API.getBuildings()
     .then(res => 
       this.setState({ buildings: res.data},
@@ -55,7 +56,7 @@ loadBuildings = () => {
               <div>
                 {this.state.buildings.map(buildings => (
     
-                  <Saved
+                  <Searched
                   booknum={buildings._id}
                   name={buildings.name}
                   architect={buildings.architect}

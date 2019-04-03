@@ -1,15 +1,21 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
+const Building = require('./Building');
+
 mongoose.promise = Promise
 
 // Define userSchema
 const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
-	password: { type: String, unique: false, required: false }
+	password: { type: String, unique: false, required: false },
+	entries:[{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Building'
+	  }]
+});
 
-})
 
 // Define schema methods
 userSchema.methods = {

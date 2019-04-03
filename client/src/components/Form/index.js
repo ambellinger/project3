@@ -9,6 +9,16 @@ export function Input(props) {
     </div>
   );
 }
+export function SelectList(props){
+  return(
+<div className="form-group">
+  <select className="form-control" id="neighborhoods"  {...props}/>
+  {/* <option selected> Enter your Neighborhood</option> */}
+   
+
+</div>
+);
+}
 
 export function TextArea(props) {
   return (
