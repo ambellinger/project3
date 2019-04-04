@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-//import SearchForm from "../components/SearchForm";
 import Jumbotron from "../components/Jumbotron"
 import Nav from "../components/Nav"
 import ViewSaved from "../components/ViewSaved"
 
-
-// import SearchResults from "../components/SearchResults";
-// import Searched from "../components/Searched"
 class Saved extends Component {
   state = {
     search: "",
@@ -24,33 +20,22 @@ class Saved extends Component {
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
      let userid = sessionStorage.getItem("userid");
-     let blah;
     API.getUserWithBuildingId(userid)
       .then(res => this.setState({ results: res.data },
         console.log(res.data, "Api. get user with building id"),
-        //console.log(res.data.entries),
+   
         //this places the ids of the user's saved buildings into the state called entries.
         this.setState({ entries: res.data[0].entries}),
         console.log("this.state.entries" + this.state.entries),
         console.log(this.state.entries[0]),
-        blah = this.state.entries.map(results => results),
-        console.log("blah" + blah[0]),
-        
-        //this.getSavedBuildingsFromUserID(this.state.entries) 
+       
+        //Map through entries and then plug the results into the function that retrieves the building's info
         this.state.entries.map(results => 
           this.getSavedBuildingsFromUserID(results))
 
-        // this.getSavedBuildingsFromUserID(this.state.entries.map(results => results)) 
       ))
       .catch(err => console.log(err));
 
-    // this.getSavedBuildingsFromUserID(this.state.entries); 
-    // API.getAllSavedBuilding("5ca0009525515396ecbd4a18")
-    //     .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
-    //       console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
-    //       )
-    //       )
-    //         .catch(err => console.log(err));
   }
 
   getSavedBuildingsFromUserID = buildingid => {
@@ -60,7 +45,6 @@ class Saved extends Component {
     .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
       console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
       this.state.getThemBuildings.push(res.data),
-      //this.setState({getThemBuildings: res.data}), <<Didn't work because it just set the state with the last one in the map.
       console.log(this.state.getThemBuildings, "get them buildings, testing")
       )
       )
@@ -89,8 +73,7 @@ class Saved extends Component {
   };
 
   handleUpdate = buildingid => {
-    //   console.log(results, "i am book data")
-    // alert(id + " " + sessionStorage.getItem("userid"))\
+
     console.log(buildingid, "buildingid")
     API.update({ _id: buildingid }, sessionStorage.getItem("userid"))
       .catch(err => console.log(err));
@@ -103,12 +86,6 @@ class Saved extends Component {
 
         <Jumbotron />
 
-        {/* <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            neighborhood={this.state.neighborhood}
-            search={this.state.search}
-          /> */}
 
         <div>
        
