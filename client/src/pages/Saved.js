@@ -21,28 +21,36 @@ class Saved extends Component {
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-    console.log('I was triggered during componentDidMount')
-    // this.getUsersBuildings()
-    // this.getBuildingInfo()
-    let userid = sessionStorage.getItem("userid");
+     let userid = sessionStorage.getItem("userid");
     API.getUserWithBuildingId(userid)
       .then(res => this.setState({ results: res.data },
         console.log(res.data, "Api. get user with building id"),
         //console.log(res.data.entries),
         //this places the ids of the user's saved buildings into the state called entries.
         this.setState({ entries: res.data[0].entries}),
-        console.log("this.state.entries" + this.state.entries)
+        console.log("this.state.entries" + this.state.entries),
+        console.log(this.state.entries[0])
       ))
       .catch(err => console.log(err));
 
-    
-    API.getAllSavedBuilding(this.state.entries[0])
-        .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
-          console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
-          )
-          )
-            .catch(err => console.log(err));
+    this.getSavedBuildingsFromUserID("5ca0009525515396ecbd4a18"); 
+    // API.getAllSavedBuilding("5ca0009525515396ecbd4a18")
+    //     .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
+    //       console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
+    //       )
+    //       )
+    //         .catch(err => console.log(err));
   }
+
+  getSavedBuildingsFromUserID = buildingid => {
+    console.log("getSavedBuildingsFromUserIDFucntion" + buildingid)
+    API.getAllSavedBuilding(buildingid)
+    .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
+      console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
+      )
+      )
+        .catch(err => console.log(err));
+  };
 
 
 
@@ -88,22 +96,26 @@ class Saved extends Component {
           /> */}
 
         <div>
-          {this.state.results.map(results => (
+          {this.state.entries.map(results => (
 
 
 
             <ViewSaved
+           // onLoad = {() => this.getSavedBuildingsFromUserID(results)}
               identification={results._id}
-              name={results.name}
-              architect={results.architect}
-              rating={results.rating}
-              description={results.description}
-              image={results.image}
-              year={results.year}
-              saved={results.saved}
-              clickHandler={() => {
-                this.handleUpdate(results._id)
-              }} />
+              name={results._id}
+              //onLoad = {() => this.getAllSavedBuilding(results)}
+              // name={results.name}
+              // architect={results.architect}
+              // rating={results.rating}
+              // description={results.description}
+              // image={results.image}
+              // year={results.year}
+              // saved={results.saved}
+              // clickHandler={() => {
+              //   this.handleUpdate(results._id)
+              // }} 
+              />
 
 
 

@@ -14,7 +14,7 @@ class ViewSaved extends Component {
         <div id="description">
 
           <img src={this.props.image} alt="building_image" /><p>{this.props.description}</p>
-          <button bldgnum={this.props.identification} onClick ={this.props.clickHandler} type="button"className="btn btn-dark">Add to my Sites</button>
+          <button bldgnum={this.props.identification}  type="button"className="btn btn-dark">Add to my Sites</button>
 
         </div>
       </div>
