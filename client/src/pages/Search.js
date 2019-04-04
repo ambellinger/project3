@@ -45,10 +45,17 @@ class Search extends Component {
 
   handleUpdate = buildingid => {
  //   console.log(results, "i am book data")
-// alert(id + " " + sessionStorage.getItem("userid"))
+    let userid = sessionStorage.getItem("userid")
+    if(!userid) {
+      alert("You need be signed in to save buildings to your itinerary")
+    } else {
+      
+  //     alert("user id variable" + userid)
+  //  alert("handle update" + buildingid + " " + sessionStorage.getItem("userid"))
     API.update({_id: buildingid} , sessionStorage.getItem("userid"))
     .catch(err => console.log(err));
   }
+}
   render() {
     return (
       <div>
