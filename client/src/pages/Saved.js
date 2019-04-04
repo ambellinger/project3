@@ -13,6 +13,7 @@ class Saved extends Component {
     entriesIntoBuildingDB: [],
     entriesIntoBuildingDBResponse: [],
      getThemBuildings: [],
+     redirectTo: null,
     error: ""
   };
 
@@ -20,6 +21,11 @@ class Saved extends Component {
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
      let userid = sessionStorage.getItem("userid");
+    if (!userid) {
+      alert("To view your building itinerary, you must be logged in.")
+     window.location.href = "/login"
+    } else {
+    
     API.getUserWithBuildingId(userid)
       .then(res => this.setState({ results: res.data },
         console.log(res.data, "Api. get user with building id"),
@@ -35,7 +41,7 @@ class Saved extends Component {
 
       ))
       .catch(err => console.log(err));
-
+        } 
   }
 
   getSavedBuildingsFromUserID = buildingid => {
@@ -79,6 +85,7 @@ class Saved extends Component {
       .catch(err => console.log(err));
   }
   render() {
+    
     return (
       <div>
        
