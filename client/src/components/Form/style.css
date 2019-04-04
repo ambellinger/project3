@@ -1,0 +1,11 @@
+
+
+#reviewForm {
+    display: flex;
+    justify-content: center;
+}
+
+#reviewText {
+    display: flex;
+    justify-content: center;
+}

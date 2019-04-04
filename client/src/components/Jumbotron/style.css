@@ -5,7 +5,10 @@ h2 {
     font-family: 'Open Sans Condensed', sans-serif;
     opacity: .8;
     text-shadow: 2px 2px black;
-    padding-top: 170px;
+}
+
+#explore {
+  padding-top: 200px!important;
 }
 
 h1 {
@@ -13,9 +16,11 @@ h1 {
     text-shadow: 2px 2px black;
     font-size: 100px;
     opacity: .7;
-    padding-top: 40px;
-    margin-top: 0px;
     line-height: 20px;
+}
+
+#architecture {
+  padding-top: 40px!important;
 }
 
 .jumbotron {

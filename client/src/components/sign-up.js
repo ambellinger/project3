@@ -133,8 +133,9 @@ class Signup extends Component {
         return (
             <div className="SignupForm">
                 <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+                <h4 id="signupTitle">Sign up</h4>
                 <div id="mainSignupForm">
-                    <h4 id="singupTitle">Sign up</h4>
+                    {/* <h4 id="singupTitle">Sign up</h4> */}
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
