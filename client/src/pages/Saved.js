@@ -16,8 +16,10 @@ class Saved extends Component {
     entries: [],
     entriesIntoBuildingDB: [],
     entriesIntoBuildingDBResponse: [],
+     getThemBuildings: [],
     error: ""
   };
+
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
@@ -57,6 +59,9 @@ class Saved extends Component {
     API.getAllSavedBuilding(buildingid)
     .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
       console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
+      this.state.getThemBuildings.push(res.data),
+      //this.setState({getThemBuildings: res.data}), <<Didn't work because it just set the state with the last one in the map.
+      console.log(this.state.getThemBuildings, "get them buildings, testing")
       )
       )
         .catch(err => console.log(err));
@@ -106,7 +111,8 @@ class Saved extends Component {
           /> */}
 
         <div>
-          {this.state.entries.map(results => (
+        
+          {this.state.getThemBuildings.map(results => (
 
 
 
