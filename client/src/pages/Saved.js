@@ -111,26 +111,23 @@ class Saved extends Component {
           /> */}
 
         <div>
-        
+       
           {this.state.getThemBuildings.map(results => (
 
 
 
             <ViewSaved
-           // onLoad = {() => this.getSavedBuildingsFromUserID(results)}
+           
               identification={results._id}
-              name={results._id}
-              //onLoad = {() => this.getAllSavedBuilding(results)}
-              // name={results.name}
-              // architect={results.architect}
-              // rating={results.rating}
-              // description={results.description}
-              // image={results.image}
-              // year={results.year}
-              // saved={results.saved}
-              // clickHandler={() => {
-              //   this.handleUpdate(results._id)
-              // }} 
+            
+              name={results.name}
+              architect={results.architect}
+              rating={results.rating}
+              description={results.description}
+              image={results.image}
+              year={results.year}
+              saved={results.saved}
+              
               />
 
 
