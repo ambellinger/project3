@@ -22,6 +22,7 @@ class Saved extends Component {
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
      let userid = sessionStorage.getItem("userid");
+     let blah;
     API.getUserWithBuildingId(userid)
       .then(res => this.setState({ results: res.data },
         console.log(res.data, "Api. get user with building id"),
@@ -30,7 +31,14 @@ class Saved extends Component {
         this.setState({ entries: res.data[0].entries}),
         console.log("this.state.entries" + this.state.entries),
         console.log(this.state.entries[0]),
-        this.getSavedBuildingsFromUserID(this.state.entries[1]) 
+        blah = this.state.entries.map(results => results),
+        console.log("blah" + blah[0]),
+        
+        //this.getSavedBuildingsFromUserID(this.state.entries) 
+        this.state.entries.map(results => 
+          this.getSavedBuildingsFromUserID(results))
+
+        // this.getSavedBuildingsFromUserID(this.state.entries.map(results => results)) 
       ))
       .catch(err => console.log(err));
 
@@ -44,6 +52,7 @@ class Saved extends Component {
   }
 
   getSavedBuildingsFromUserID = buildingid => {
+    
     console.log("getSavedBuildingsFromUserIDFucntion" + buildingid)
     API.getAllSavedBuilding(buildingid)
     .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
