@@ -29,11 +29,12 @@ class Saved extends Component {
         //this places the ids of the user's saved buildings into the state called entries.
         this.setState({ entries: res.data[0].entries}),
         console.log("this.state.entries" + this.state.entries),
-        console.log(this.state.entries[0])
+        console.log(this.state.entries[0]),
+        this.getSavedBuildingsFromUserID(this.state.entries[1]) 
       ))
       .catch(err => console.log(err));
 
-    this.getSavedBuildingsFromUserID("5ca0009525515396ecbd4a18"); 
+    // this.getSavedBuildingsFromUserID(this.state.entries); 
     // API.getAllSavedBuilding("5ca0009525515396ecbd4a18")
     //     .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
     //       console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
