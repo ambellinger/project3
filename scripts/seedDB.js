@@ -4,8 +4,9 @@ const db = require("../models");
 // This file empties the Buildings collection and inserts the buildings below
 
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://heroku_1sltkj12:bquauefucuo84q80kbc3gmdvag@ds155634.mlab.com:55634/heroku_1sltkj12"
+  process.env.MONGODB_URI 
+  || 
+   "mongodb://heroku_1sltkj12:bquauefucuo84q80kbc3gmdvag@ds155634.mlab.com:55634/heroku_1sltkj12"
 );
 
 const siteSeed = [
