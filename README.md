@@ -15,6 +15,7 @@ This application uses lifecycle methods to render data onto the DOM and update t
 ## Search Functionality
 
 The search functionality required the creation of two different API endpoints. The first produces a list of all of the Chicago regions that a user can select. The second gets all of the entries from a selected region. The dropdown list is produced by the mongoose ‘distinct’ query method and that result is passed to a react controlled component via props into the value attribute set on our form element.
+
 ![](Project_3_readME/OptionSelected.png)
 
 This react component renders the form, but also controls what happens in that form on subsequent user input. With a controlled component, every state mutation will have an associated handler function. 
