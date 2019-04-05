@@ -32,7 +32,7 @@ This application uses Passport middleware to validate users. Local authenticatio
 
 ## UI and Design 
 
-This application utilzed the Bootstrap css framework to lay out the UI. The jumbotron image is meant with the iconic image of Chicago's "L" train is meant to signal that this application has a distintictive regional focus. Button colors were chosen to complement the aqua tones in the jumbotron image. The scripted display font is meant to be reminiscent of the ornamentation on the many works by modernist architect Louis Sullivan that can be found in Chicago. 
+This application utilzed the Bootstrap css framework to lay out the UI. The jumbotron image with the iconic view of Chicago's "L" train is meant to signal that this application has a distintictive regional focus. Button colors were chosen to complement the aqua tones in the jumbotron image. The scripted display font is meant to be reminiscent of the ornamentation on the many works by modernist architect Louis Sullivan that can be found in Chicago. 
 
 ## Setbacks, Challenges, and Lessons Learned 
 
@@ -53,6 +53,8 @@ The team is excited to continue work on this application in a post-bootcamp worl
 
 * [Bootstrap](https://getbootstrap.com/)
 * [Express](https://www.npmjs.com/package/express)
+* [Mongoose](hhttps://mongoosejs.com)
+* [Morgan](https://www.npmjs.com/package/morgan)
 * [npm star rating](https://www.npmjs.com/package/react-star-ratings)
 * [passport](http://www.passportjs.org/)
 * [React](https://reactjs.org/)
