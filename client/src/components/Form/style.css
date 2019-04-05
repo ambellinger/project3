@@ -12,7 +12,9 @@
 
 #formDropdown {
     width: 800px;
-     margin-left: 155px; 
+    margin: 0 auto;
+    /* margin-left: 14%; */
+     /* margin-left: 155px;  */
     /* display: flex;
     justify-content: center; */
 
