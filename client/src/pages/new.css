@@ -7,6 +7,7 @@
     color: black;
     opacity: 1;
     padding-top: 100px;
+   
     display: flex;
     justify-content: center;
 }
@@ -34,4 +35,40 @@
     border: none;
 }
 
-
+ /* @media screen and (max-width: 980px) {
+    .newBuildingTitle {
+        text-shadow: none;
+        font-family: 'Open Sans Condensed';
+        color: black;
+        opacity: 1;
+        padding-top: 100px;
+        line-height: 2.5;
+        justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .newBuildingTitle {
+        text-shadow: none;
+        font-family: 'Open Sans Condensed';
+        color: black;
+        opacity: 1;
+        padding-top: 100px;
+        line-height: 2.5;
+        justify-content: center;
+    }
+  } */
+  
+  
+  
+  @media screen and (max-width: 640px) {
+    .newBuildingTitle {
+        text-shadow: none;
+        font-family: 'Open Sans Condensed';
+        color: black;
+        opacity: 1;
+        padding-top: 100px;
+        line-height: 2.5;
+        justify-content: center;
+    }
+  } 

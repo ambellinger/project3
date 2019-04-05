@@ -14,6 +14,14 @@ nav {
   color: white;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 18px;
+  float: left!important;
+  
+}
+
+#itinerary,
+#submitReviewButton {
+  float: left;
+  margin-left: 0; 
 }
 
 .text-secondary {
@@ -35,6 +43,24 @@ a:hover{
   padding-right: 20px;
 } */
 
-#submitReviewButton {
- 
+
+@media screen and (max-width: 980px) {
+  .nav-item {
+    justify-content:space;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-item {
+    justify-content:space;
+  }
+}
+
+
+
+@media screen and (max-width: 640px) {
+  .nav-item {
+    justify-content:space;
+  }
+
 }

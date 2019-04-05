@@ -5,6 +5,7 @@ import Jumbotron from "../components/Jumbotron"
 import Nav from "../components/Nav"
 import "../pages/search.css";
 
+
 // import SearchResults from "../components/SearchResults";
 import Searched from "../components/Searched"
 class Search extends Component {
@@ -13,6 +14,7 @@ class Search extends Component {
     neighborhood: [],
     results: [],
     error: ""
+    
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
@@ -57,6 +59,8 @@ class Search extends Component {
     .catch(err => console.log(err));
   }
 }
+
+
   render() {
     return (
       <div>
@@ -78,6 +82,7 @@ class Search extends Component {
             
             <Searched
             identification={results._id}
+            address={results.address}
             name={results.name}
             architect={results.architect}
             rating={results.rating}
@@ -88,6 +93,7 @@ class Search extends Component {
               this.handleUpdate(results._id)
             }}
             />
+
             </div>
 
 
