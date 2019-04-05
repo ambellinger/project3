@@ -41,7 +41,7 @@ export default {
   },
 
   update: function(buildingData,userid) {
-       alert("building" + buildingData._id +  "user"+ userid);
+       alert("Added to your itinerary");
 
     return axios.put("/api/saved/buildings/" + userid,buildingData);
   },

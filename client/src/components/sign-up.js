@@ -63,7 +63,7 @@ class Signup extends Component {
                 console.log(response)
                 if (!response.data.errmsg) {
                     console.log('successful signup')
-                    alert("you did it")
+                    alert("You're signed up!")
                     this.setState({
                         //redirect to login page
                         redirectTo: '/login'

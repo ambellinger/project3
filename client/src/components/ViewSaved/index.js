@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import "../Searched/style.css"
+import "../ViewSaved/style.css"
 
 
 class ViewSaved extends Component {
   render() {
     return (
 
-      <div className ="card">
+      <div className ="card" id="savedCard">
         
         <h2 class="buildingName"><a href={this.props.link}>{this.props.name}</a></h2>
         <h3 class="architectName">{this.props.architect}</h3>
