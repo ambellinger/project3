@@ -6,7 +6,7 @@ import Nav from "../components/Nav"
 import "../pages/search.css";
 
 // import SearchResults from "../components/SearchResults";
-import Saved from "../components/Saved"
+import Searched from "../components/Searched"
 class Search extends Component {
   state = {
     search: "",
@@ -43,6 +43,20 @@ class Search extends Component {
       })
       .catch(err => this.setState({ error: err.message }));
   };
+
+  handleUpdate = buildingid => {
+ //   console.log(results, "i am book data")
+    let userid = sessionStorage.getItem("userid")
+    if(!userid) {
+      alert("You need be signed in to save buildings to your itinerary")
+    } else {
+      
+  //     alert("user id variable" + userid)
+  //  alert("handle update" + buildingid + " " + sessionStorage.getItem("userid"))
+    API.update({_id: buildingid} , sessionStorage.getItem("userid"))
+    .catch(err => console.log(err));
+  }
+}
   render() {
     return (
       <div>
@@ -61,7 +75,8 @@ class Search extends Component {
               {this.state.results.map(results =>(
 
             <div id="finalResults">
-            <Saved
+            
+            <Searched
             identification={results._id}
             name={results.name}
             architect={results.architect}
@@ -69,7 +84,9 @@ class Search extends Component {
             description={results.description}
             image={results.image}
             year={results.year}
-            clickHandler={this.deleteBook}
+            clickHandler={() => {
+              this.handleUpdate(results._id)
+            }}
             />
             </div>
 

@@ -13,7 +13,7 @@ router.route("/:signup")
   // Matches with "/api/books"
 router.route("/")
 // "this route is working"
-//  .get(userController.findUser)
+// .get(userController.findUser)
  .post(userController.findUser);
 
  router.route("/check/:validate")

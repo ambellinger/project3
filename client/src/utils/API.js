@@ -40,9 +40,24 @@ export default {
     return axios.delete("/api/buildings/" + id);
   },
 
-  update: function(id) {
-    return axios.delete("/api/buildigns/" + id);
+  update: function(buildingData,userid) {
+       alert("building" + buildingData._id +  "user"+ userid);
+
+    return axios.put("/api/saved/buildings/" + userid,buildingData);
   },
+
+  
+  // Gets the book with the given id
+  getAllSavedBuilding: function(buildingid) {
+    return axios.get("/api/saved/savedview/" + buildingid);
+  },
+    
+  // Gets the book with the given id
+  getUserWithBuildingId: function(userid) {
+    return axios.get("/api/saved/buildings/" + userid);
+  },
+
+
   // Saves a book to the database
   saveBuilding: function(buildingData) {
     console.log(buildingData)

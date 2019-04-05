@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Saved from "../Saved"
+// import Saved from "../Saved"
 import "../SearchForm/style.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array

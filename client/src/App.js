@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 // import logo from './logo.svg';
 import './App.css';
-import Main from "./pages/Main"
+// import Main from "./pages/Main"
 import New from "./pages/New"
 import Search from './pages/Search'
 import axios from 'axios'
 import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
-
+import Saved from './pages/Saved'
 
 class App extends Component{
   constructor() {
@@ -34,7 +34,7 @@ getUser() {
       .get('//localhost:3001/user')
       .then(response => {
           console.log('Get user response: ')
-          console.log(response.data)
+         // console.log(response.data)
           if (response.data.user) {
               console.log('Get User: There is a user saved in the server session: ')
 
@@ -58,17 +58,18 @@ return (
 <Router>
 
 <Switch>
-<Route exact path="/" render={() => <Main loggedIn={this.state.loggedIn}/>} />
+<Route exact path="/" render={() => <Search loggedIn={this.state.loggedIn}/>} />
 <Route exact path="/new"component ={New}/>
 
 
  
                 {/* Routes to different components */}
-                <Route exact path="/" component={Main} />
+                <Route exact path="/" component={Search} />
                 <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
                 <Route path="/signup" render={() => <Signup />} />
                 <Route path="/search" render={() => <Search />} />
-
+                <Route path="/viewsaved" render={() => <Saved />} />
+                
 
 </Switch>
 {this.state.loggedIn && <p>Welcome, {this.state.username}!</p>}

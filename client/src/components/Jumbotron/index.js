@@ -1,6 +1,6 @@
 import React from "react";
 import "../Jumbotron/style.css";
-import Saved from "../Saved"
+import Searched from "../Searched"
 
 
 

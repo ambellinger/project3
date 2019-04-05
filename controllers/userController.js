@@ -44,11 +44,11 @@ module.exports = {
             username: req.body.username
         }).then(function (user) {
           if (!user) {
-            res.json( false);
+            res.json( user);
           } else {
             bcrypt.compare(req.body.password, user.password, function (err, result) {
               if (result === true) {
-                res.json(result);
+                res.json(user);
               } else {
                 res.json(false);
               }

@@ -11,9 +11,12 @@ router.route("/")
   .get(BldgController.findAll)
   .post(BldgController.create)
 
+router.route("/users/populateduser")
+.post(BldgController.finduser)
 
-  // router.route("/saved")
-  // .get(BldgController.findAll)
+router.route("/buildings/:userid")
+.put(BldgController.update)
+.get(BldgController.populateUserBuildings)
 
   // router.route("/new")
   //   .get(BldgController.create)
@@ -25,6 +28,8 @@ router
   .delete(BldgController.remove)
   .post(BldgController.create)
 
-  
+  router
+  .route("/savedview/:buildingid")
+  .get(BldgController.findAllSavedBuilding);
 
 module.exports = router;

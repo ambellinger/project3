@@ -93,7 +93,7 @@ class Nav extends Component {
     
       //  Kurt, this reset the loggedIn to false 
         sessionStorage.setItem("loggedIn","false");
-        
+        sessionStorage.clear();
       // Kurt, this routes back to the homepage
                  window.location.href="/";
 
@@ -120,15 +120,24 @@ render(){
   return (
 
     <nav className="navbar">
-      <a className="nav-item" href="/saved">saved buildings</a>
+    <div className="firstNavButton">
+      <a className="nav-item" id="itinerary" href="/viewsaved">itinerary</a>
+      </div>
+      <div className="secondNavButton">
+      <a className="nav-item" id="submitReviewButton" href="/new">submit a building</a>
+      </div>
+
       <div>
 
         {/* Kurt, it will look for loggedIn value that was stored in sessionStorage, if it is true, it will show logout only
         otherwise the homepage */}
       {sessionStorage.getItem("loggedIn")==="true"? (
                             <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                <span className="text-secondary">logout</span></Link>
+                                <Link to="/" className="btn btn-link text-secondary">
+                                       <span className="text-secondary">home</span>
+                                       </Link>
+                               <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+                               <span className="text-secondary">logout</span></Link>
 
                             </section>
                         ) : (
