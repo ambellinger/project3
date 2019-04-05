@@ -16,9 +16,12 @@ This application uses lifecycle methods to render data onto the DOM and update t
 
 The search functionality required the creation of two different API endpoints. The first produces a list of all of the Chicago regions that a user can select. The second gets all of the entries from a selected region. The dropdown list is produced by the mongoose ‘distinct’ query method and that result is passed to a react controlled component via props into the value attribute set on our form element.
 ![](Project_3_readME/OptionSelected.png)
+
 This react component renders the form, but also controls what happens in that form on subsequent user input. With a controlled component, every state mutation will have an associated handler function. 
-In this case the handleInputChange method grabs onto the value of the selected neighborhood and in a
+
 ![](Project_3_readME/HandleInput.png)
+
+In this case the handleInputChange method grabs onto the value of the selected neighborhood and in a
 subsequent handleFormSubmit method, queries the database for all of the entries in a specific region and renders the result. 
 
 ![](Project_3_readME/Archfinder.gif)
