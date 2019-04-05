@@ -3,6 +3,7 @@ import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron"
 import Nav from "../components/Nav"
 import ViewSaved from "../components/ViewSaved"
+import { StarRatingComponent, FormBtn} from "../components/Star";
 
 class Saved extends Component {
   state = {
@@ -105,6 +106,7 @@ class Saved extends Component {
               identification={results._id}
             
               name={results.name}
+              address={results.address}
               architect={results.architect}
               rating={results.rating}
               description={results.description}
@@ -114,9 +116,13 @@ class Saved extends Component {
               
               />
 
+          
+              
 
 
           ))}
+
+              
         </div>
 
       </div>

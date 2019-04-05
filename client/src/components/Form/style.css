@@ -25,3 +25,27 @@
     display: flex;
     justify-content: center;
 } */
+
+
+@media screen and (max-width: 980px) {
+    h1 {
+      font-size: 50%;
+      color: red;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    h1 {
+        font-size: 50%;
+        color: red;
+      }
+  }
+  
+  
+  
+  @media screen and (max-width: 640px) {
+    h1 {
+        font-size: 50%;
+        color: red;
+      }
+  }

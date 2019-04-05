@@ -11,6 +11,7 @@ class ViewSaved extends Component {
         
         <h2 class="buildingName"><a href={this.props.link}>{this.props.name}</a></h2>
         <h3 class="architectName">{this.props.architect}</h3>
+        <h3 class="architectName">{this.props.address}</h3>
         <h6>{this.props.year}</h6>
         <div id="description">
 

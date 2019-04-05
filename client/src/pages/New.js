@@ -21,6 +21,15 @@ class New extends Component {
 
     };
 
+    componentDidMount() {
+        let userid = sessionStorage.getItem("userid");
+        if (!userid) {
+            alert("To view your enter a building, you must be logged in.")
+            window.location.href = "/login"
+        }
+    }
+
+   
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -130,9 +139,10 @@ class New extends Component {
                             placeholder="Year" />
 
                         <div className="formBottom">
+                        <h6>Rating</h6>
                             <StarRatingComponent
                                 name="rating"
-                                starCount={10}
+                                starCount={5}
                                 value={this.state.rating}
                                 onStarClick={this.onStarClick.bind(this)}
                             />
