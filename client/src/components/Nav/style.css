@@ -22,7 +22,19 @@ nav {
   font-size: 18px;
 }
 
+.secondNavButton {
+  margin-right: 950px;
+}
+
 a:hover{ 
   text-decoration: none!important;
   color: white;
 };
+
+/* #itinerary {
+  padding-right: 20px;
+} */
+
+#submitReviewButton {
+ 
+}

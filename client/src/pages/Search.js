@@ -3,6 +3,7 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import Jumbotron from "../components/Jumbotron"
 import Nav from "../components/Nav"
+import "../pages/search.css";
 
 // import SearchResults from "../components/SearchResults";
 import Searched from "../components/Searched"
@@ -63,7 +64,7 @@ class Search extends Component {
 
         <Jumbotron/>
         
-          <SearchForm
+          <SearchForm id="searchBar"
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             neighborhood={this.state.neighborhood}
@@ -73,6 +74,8 @@ class Search extends Component {
             <div>
               {this.state.results.map(results =>(
 
+            <div id="finalResults">
+            
             <Searched
             identification={results._id}
             name={results.name}
@@ -81,11 +84,11 @@ class Search extends Component {
             description={results.description}
             image={results.image}
             year={results.year}
-            saved={results.saved}
             clickHandler={() => {
               this.handleUpdate(results._id)
-            }}            />
-              
+            }}
+            />
+            </div>
 
 
           ))}

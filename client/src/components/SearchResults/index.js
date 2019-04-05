@@ -1,8 +1,9 @@
 import React from "react";
-import "./style.css";
+import "../SearchResults/style.css"
 
 function SearchResults(props) {
   return (
+    <div id="resultsDisplay">
     <ul className="list-group search-results">
       {props.results.map(result => (
         <li key={result} className="list-group-item">
@@ -10,6 +11,7 @@ function SearchResults(props) {
         </li>
       ))}
     </ul>
+    </div>
   );
 }
 

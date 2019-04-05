@@ -7,3 +7,19 @@ form.search button[type="submit"] {
   float: right;
   margin-top: 10px;
 }
+
+#buildingSearchButton {
+  margin-top: 10px;
+  color: white;
+  background-color: rgb(7, 150, 150);
+  border: none;
+  height: 40px;
+  width: 100px;
+  border-radius: 6px;
+  margin-left: 150px;
+}
+
+#searchForBuildings {
+  display: flex;
+  justify-content: center;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 // import logo from './logo.svg';
 import './App.css';
-import Main from "./pages/Main"
+// import Main from "./pages/Main"
 import New from "./pages/New"
 import Search from './pages/Search'
 import axios from 'axios'
@@ -58,13 +58,13 @@ return (
 <Router>
 
 <Switch>
-<Route exact path="/" render={() => <Main loggedIn={this.state.loggedIn}/>} />
+<Route exact path="/" render={() => <Search loggedIn={this.state.loggedIn}/>} />
 <Route exact path="/new"component ={New}/>
 
 
  
                 {/* Routes to different components */}
-                <Route exact path="/" component={Main} />
+                <Route exact path="/" component={Search} />
                 <Route path="/login" render={() => <LoginForm updateUser={this.updateUser} />} />
                 <Route path="/signup" render={() => <Signup />} />
                 <Route path="/search" render={() => <Search />} />

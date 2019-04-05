@@ -3,6 +3,7 @@ import "../Jumbotron/style.css";
 import Searched from "../Searched"
 
 
+
 function Jumbotron(props) {
   return (
     <div
@@ -10,8 +11,8 @@ function Jumbotron(props) {
       className="jumbotron"
     >
 
-    <h2>EXPLORE CHICAGO</h2>
-    <h1>architecture</h1>
+    <h2 id="explore">EXPLORE CHICAGO</h2>
+    <h1 id="architecture">architecture</h1>
     
       {/* <input
           value={props.search}

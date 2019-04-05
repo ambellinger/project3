@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import StarRatingComponent from 'react-star-rating-component';
 import { Input, TextArea, FormBtn, SelectList } from "../components/Form";
 import API from "../utils/API";
+import "./new.css";
 
 
 
@@ -39,7 +40,7 @@ class New extends Component {
                 image: this.state.image,
                 description: this.state.description,
                 year: this.state.year,
-                rating: this.state.rating, 
+                rating: this.state.rating,
                 created_by: sessionStorage.getItem("userid")
 
 
@@ -50,29 +51,29 @@ class New extends Component {
         }
     };
 
-    
-  onStarClick(nextValue, prevValue, name) {
-    this.setState({rating: nextValue});
-  }
 
-  changeRating(newRating, name) {
-    this.setState({
-      rating: newRating
-    });
-  }
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({ rating: nextValue });
+    }
 
-  clearForm = () => {
-      this.setState({
-        name: "",
-        architect: "",
-        neighborhood: "",
-        address: "",
-        image: "",
-        description: "",
-        year: "",
-        rating: 0,
-      })
-  }
+    changeRating(newRating, name) {
+        this.setState({
+            rating: newRating
+        });
+    }
+
+    clearForm = () => {
+        this.setState({
+            name: "",
+            architect: "",
+            neighborhood: "",
+            address: "",
+            image: "",
+            description: "",
+            year: "",
+            rating: 0,
+        })
+    }
 
 
     render() {
@@ -82,67 +83,74 @@ class New extends Component {
                 {/* <Jumbotron /> */}
                 <div class="container">
                     {/* <h1> Enter a New Building</h1> */}
-                    <Input
-                        value={this.state.name}
-                        onChange={this.handleInputChange}
-                        name="name"
-                        placeholder="Name of Building" />
-                    <Input
-                        value={this.state.architect}
-                        onChange={this.handleInputChange}
-                        name="architect"
-                        placeholder="Architect" />
-                    <SelectList onChange={this.handleInputChange}
-                    name="neighborhood"
-                    placeholder="Neighborhood">
-                    <option value= "Loop" key= "Loop">Loop</option>
-                    <option value = "South Side" key = "South Side" >South Side</option>
-                    <option value = "North Side" key="North Side">North Side</option>
-                    <option value = "Northwest Side" key = "Northwest Side">Northwest Side</option>
-                    <option value = "West Side" key= "West Side">West Side</option>
-                   </SelectList>
-             
-                    <Input
-                        value={this.state.address}
-                        onChange={this.handleInputChange}
-                        name="address"
-                        placeholder="Address" />
-                    <Input
-                        value={this.state.image}
-                        onChange={this.handleInputChange}
-                        name="image"
-                        placeholder="Image URL" />
+                    <h1 className="newBuildingTitle"> Enter a New Building</h1>
+                    <div class="mainFormArea">
+                        <Input
+                            value={this.state.name}
+                            onChange={this.handleInputChange}
+                            name="name"
+                            placeholder="Name of Building" />
+                        <Input
+                            value={this.state.architect}
+                            onChange={this.handleInputChange}
+                            name="architect"
+                            placeholder="Architect" />
+                        <SelectList onChange={this.handleInputChange}
+                            id="formDropdown"
+                            name="neighborhood"
+                            placeholder="Neighborhood">
+                            <option value="Loop" key="Loop">Loop</option>
+                            <option value="South Side" key="South Side" >South Side</option>
+                            <option value="North Side" key="North Side">North Side</option>
+                            <option value="Northwest Side" key="Northwest Side">Northwest Side</option>
+                            <option value="West Side" key="West Side">West Side</option>
+                        </SelectList>
 
-                    <TextArea
-                        value={this.state.description}
-                        onChange={this.handleInputChange}
-                        name="description"
-                        placeholder="Description" />
+                        <Input
+                            value={this.state.address}
+                            onChange={this.handleInputChange}
+                            name="address"
+                            placeholder="Address" />
+                        <Input
+                            value={this.state.image}
+                            onChange={this.handleInputChange}
+                            name="image"
+                            placeholder="Image URL" />
 
-                    <Input
-                        value={this.state.year}
-                        onChange={this.handleInputChange}
-                        name="year"
-                        placeholder="Year" />
+                        <TextArea
+                            value={this.state.description}
+                            onChange={this.handleInputChange}
+                            name="description"
+                            placeholder="Description" />
 
+                        <Input
+                            value={this.state.year}
+                            onChange={this.handleInputChange}
+                            name="year"
+                            placeholder="Year" />
 
-<StarRatingComponent
-                  name="rating"
-                  starCount={10}
-                  value={this.state.rating}
-                  onStarClick={this.onStarClick.bind(this)}
-                />
-                    <FormBtn
-                        disabled={!(this.state.name)}
-                        onClick={this.handleFormSubmit}
-                    >
-                        Submit
+                        <div className="formBottom">
+                            <StarRatingComponent
+                                name="rating"
+                                starCount={10}
+                                value={this.state.rating}
+                                onStarClick={this.onStarClick.bind(this)}
+                            />
+                            <FormBtn id="newBuildingButton"
+                                disabled={!(this.state.name)}
+                                onClick={this.handleFormSubmit}
+                            >
+                                Submit
               </FormBtn>
-
-                </div>
-            </div>
-        )
-    }
-
-}
+    
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                
+             
+                )
+            }
+        
+        }
 export default New;
