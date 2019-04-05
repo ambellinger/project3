@@ -106,6 +106,7 @@ class Saved extends Component {
               identification={results._id}
             
               name={results.name}
+              address={results.address}
               architect={results.architect}
               rating={results.rating}
               description={results.description}
