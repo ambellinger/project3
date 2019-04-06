@@ -23,45 +23,13 @@
 
 }
 
-/* #formDropdown {
-    display: flex;
-    justify-content: center;
-    width: 800px;
-} */
-
 #newBuildingButton {
     background-color: rgb(7, 150, 150);
     opacity: 1;
     border: none;
 }
 
- /* @media screen and (max-width: 980px) {
-    .newBuildingTitle {
-        text-shadow: none;
-        font-family: 'Open Sans Condensed';
-        color: black;
-        opacity: 1;
-        padding-top: 100px;
-        line-height: 2.5;
-        justify-content: center;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .newBuildingTitle {
-        text-shadow: none;
-        font-family: 'Open Sans Condensed';
-        color: black;
-        opacity: 1;
-        padding-top: 100px;
-        line-height: 2.5;
-        justify-content: center;
-    }
-  } */
-  
-  
-  
-  @media screen and (max-width: 640px) {
+   @media screen and (max-width: 640px) {
     .newBuildingTitle {
         text-shadow: none;
         font-family: 'Open Sans Condensed';

@@ -5,12 +5,12 @@
 ![](Project_3_readME/jumbotron.png)
 
 [Chicago Architecture Finder](https://chiarchfindr.herokuapp.com/)
-is a fullstack React application designed to assist architecture aficionados, tourists, art history students, or anyone interested in learning about the rich history of architecture in Chicago. Architecture finder also aims to promote community involvement in historic preservation by providing a platform for individuals to tell the stories of these structures in their own words, widening the scope of user experience outside of largely constrained and canonical must-see architecture lists.
+is a fullstack React application designed to assist architecture aficionados, tourists, art history students, or anyone interested in learning about the rich history of architecture in Chicago. Architecture finder also aims to promote community involvement in historic preservation by providing a platform for individuals to tell the stories of these structures in their own words,widening the scope of user experience outside of largely constrained and canonical must-see architecture lists.
 
 
 ## Helper Functions and Lifecycle Methods 
 
-This application uses lifecycle methods to render data onto the DOM and update that data. Constructor methods are called before the components are mounted to the DOM, render methods return JSX. After render is called ComponentDidMount is invoked. This ensures that the network request to the API containing building data is made as soon as the component that utilizes that data is mounted to the DOM. Utility functions are are used throughout the application to perform operations such as mapping, session storage and other pure javascript actions.
+This application uses lifecycle methods to render data onto the DOM and update that data. Constructor methods are called before the components are mounted to the DOM and render methods return JSX. After render is called ComponentDidMount is invoked. This ensures that the network request to the API containing building data is made as soon as the component that utilizes that data is mounted to the DOM. Utility functions are are used throughout the application to perform operations such as mapping, session storage and other pure javascript actions.
 
 ## Search Functionality
 
@@ -28,6 +28,7 @@ subsequent handleFormSubmit method, queries the database for all of the entries 
 ![](Project_3_readME/Archfinder.gif)
 
 ## User Validation
+
 This application uses Passport middleware to validate users. Local authentication strategy authenticates users using a username and password. This presented many challenges to the project that are detailed in the “Setbacks, Challenges, and Lessons Learned” section of the document.
 
 ## UI and Design 
@@ -46,14 +47,14 @@ In future work it will be important to carefully plan data needs before laying d
 
 ## Directions for Future Development
 
-The team is excited to continue work on this application in a post-bootcamp world. We plan to incorportate the Google Maps API so that users can see precise locations. Search functionalities will be expanded to inclunde all of Chicago's 77 neighborhoods, and a 'search by prominent architect' feature will also be implemented. This application also lends itself well to a mobile platform with an image upload feature, so we hope to work in that direction as well. 
+The team is excited to continue work on this application in a post-bootcamp world. We plan to incorportate the Google Maps API so that users can see precise locations. Search functionalities will be expanded to include all of Chicago's 77 neighborhoods, and a 'search by prominent architect' feature will also be implemented. This application also lends itself well to a mobile platform with an image upload feature, so we hope to work in that direction as well. 
 
 
 ## Technologies Used 
 
 * [Bootstrap](https://getbootstrap.com/)
 * [Express](https://www.npmjs.com/package/express)
-* [Mongoose](hhttps://mongoosejs.com)
+* [Mongoose](mhttps://mongoosejs.com)
 * [Morgan](https://www.npmjs.com/package/morgan)
 * [npm star rating](https://www.npmjs.com/package/react-star-ratings)
 * [passport](http://www.passportjs.org/)

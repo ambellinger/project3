@@ -3,7 +3,6 @@ import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron"
 import Nav from "../components/Nav"
 import ViewSaved from "../components/ViewSaved"
-import { StarRatingComponent, FormBtn} from "../components/Star";
 
 class Saved extends Component {
   state = {
@@ -13,49 +12,49 @@ class Saved extends Component {
     entries: [],
     entriesIntoBuildingDB: [],
     entriesIntoBuildingDBResponse: [],
-     getThemBuildings: [],
-     redirectTo: null,
+    getThemBuildings: [],
+    redirectTo: null,
     error: ""
   };
 
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-     let userid = sessionStorage.getItem("userid");
+    let userid = sessionStorage.getItem("userid");
     if (!userid) {
       alert("To view your building itinerary, you must be logged in.")
-     window.location.href = "/login"
+      window.location.href = "/login"
     } else {
-    
-    API.getUserWithBuildingId(userid)
-      .then(res => this.setState({ results: res.data },
-        console.log(res.data, "Api. get user with building id"),
-   
-        //this places the ids of the user's saved buildings into the state called entries.
-        this.setState({ entries: res.data[0].entries}),
-        console.log("this.state.entries" + this.state.entries),
-        console.log(this.state.entries[0]),
-       
-        //Map through entries and then plug the results into the function that retrieves the building's info
-        this.state.entries.map(results => 
-          this.getSavedBuildingsFromUserID(results))
 
-      ))
-      .catch(err => console.log(err));
-        } 
+      API.getUserWithBuildingId(userid)
+        .then(res => this.setState({ results: res.data },
+          console.log(res.data, "Api. get user with building id"),
+
+          //this places the ids of the user's saved buildings into the state called entries.
+          this.setState({ entries: res.data[0].entries }),
+          console.log("this.state.entries" + this.state.entries),
+          console.log(this.state.entries[0]),
+
+          //Map through entries and then plug the results into the function that retrieves the building's info
+          this.state.entries.map(results =>
+            this.getSavedBuildingsFromUserID(results))
+
+        ))
+        .catch(err => console.log(err));
+    }
   }
 
   getSavedBuildingsFromUserID = buildingid => {
-    
+
     console.log("getSavedBuildingsFromUserIDFucntion" + buildingid)
     API.getAllSavedBuilding(buildingid)
-    .then(res => this.setState({entriesIntoBuildingDBResponse: res.data},
-      console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
-      this.state.getThemBuildings.push(res.data),
-      console.log(this.state.getThemBuildings, "get them buildings, testing")
+      .then(res => this.setState({ entriesIntoBuildingDBResponse: res.data },
+        console.log(res.data, "this is the results of the API get all saved buildings, aka, second method"),
+        this.state.getThemBuildings.push(res.data),
+        console.log(this.state.getThemBuildings, "get them buildings, testing")
       )
       )
-        .catch(err => console.log(err));
+      .catch(err => console.log(err));
   };
 
 
@@ -86,25 +85,25 @@ class Saved extends Component {
       .catch(err => console.log(err));
   }
   render() {
-    
+
     return (
       <div>
-       
+
         <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
 
         <Jumbotron />
 
 
         <div>
-       
+
           {this.state.getThemBuildings.map(results => (
 
 
 
             <ViewSaved
-           
+
               identification={results._id}
-            
+
               name={results.name}
               address={results.address}
               architect={results.architect}
@@ -113,16 +112,16 @@ class Saved extends Component {
               image={results.image}
               year={results.year}
               saved={results.saved}
-              
-              />
 
-          
-              
+            />
+
+
+
 
 
           ))}
 
-              
+
         </div>
 
       </div>

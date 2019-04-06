@@ -7,16 +7,7 @@ import "../SearchForm/style.css";
 function SearchForm(props) {
   return (
     <div className="form-group" id="searchForBuildings">
-      {/* <input
-          value={props.search}
-          // onChange={props.handleInputChange}
-          name="neighborhood"
-          list="neighborhood"
-          type="text"
-          className="form-control"
-          placeholder="Type in a dog breed to begin"
-          id="neighborhood"
-        /> */}
+
       <form onSubmit={props.handleFormSubmit}>
         <select className="custom-select" value={props.search} onChange={props.handleInputChange}>
 
@@ -25,11 +16,9 @@ function SearchForm(props) {
             <option value={neighborhood} key={neighborhood}>{neighborhood}</option>
           ))}
         </select>
-        <input type="submit" value="Search" id="buildingSearchButton"/>
-       {/* <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-          Search
-        </button>  */}
-      </form> 
+        <input type="submit" value="Search" id="buildingSearchButton" />
+
+      </form>
     </div>
   );
 }

@@ -10,13 +10,12 @@ router.route("/:signup")
   .post(userController.create);
 
 
-  // Matches with "/api/books"
+// Matches with "/api/books"
 router.route("/")
-// "this route is working"
-// .get(userController.findUser)
- .post(userController.findUser);
+  // "this route is working"
+  .post(userController.findUser);
 
- router.route("/check/:validate")
-.post(userController.checkusername)
+router.route("/check/:validate")
+  .post(userController.checkusername)
 
 module.exports = router;
