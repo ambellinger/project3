@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
-// import Jumbotron from "../components/Jumbotron";
 import StarRatingComponent from 'react-star-rating-component';
 import { Input, TextArea, FormBtn, SelectList } from "../components/Form";
 import API from "../utils/API";
@@ -29,7 +28,7 @@ class New extends Component {
         }
     }
 
-   
+
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -89,9 +88,9 @@ class New extends Component {
         return (
             <div>
                 <Nav />
-                {/* <Jumbotron /> */}
+
                 <div class="container">
-                    {/* <h1> Enter a New Building</h1> */}
+
                     <h1 className="newBuildingTitle"> Enter a New Building</h1>
                     <div class="mainFormArea">
                         <Input
@@ -139,7 +138,7 @@ class New extends Component {
                             placeholder="Year" />
 
                         <div className="formBottom">
-                        <h6>Rating</h6>
+                            <h6>Rating</h6>
                             <StarRatingComponent
                                 name="rating"
                                 starCount={5}
@@ -152,15 +151,15 @@ class New extends Component {
                             >
                                 Submit
               </FormBtn>
-    
+
                         </div>
                     </div>
-                    </div>
-                    </div>
-                
-             
-                )
-            }
-        
-        }
+                </div>
+            </div>
+
+
+        )
+    }
+
+}
 export default New;

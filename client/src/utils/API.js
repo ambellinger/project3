@@ -15,12 +15,12 @@ export default {
   getHood: function(neighborhood) {
     return axios.get("/api/buildings/neighborhood/" + neighborhood);
   },
-  // Gets all books
+  // Gets all buildings
   getHomepage: function() {
     return axios.get("/");
   },
   
-    // Gets all books
+    // Gets all buildings
     getLogin: function() {
       return axios.get("/login");
     },
@@ -31,11 +31,11 @@ export default {
     return axios.post("/api/users", userData);
   },
 
-  // Gets the book with the given id
+  // Gets the buildings with the given id
   getBook: function(id) {
     return axios.get("/api/buildings/" + id);
   },
-  // Deletes the book with the given id
+  // Deletes the  buildings with the given id
   deleteBuilding: function(id) {
     return axios.delete("/api/buildings/" + id);
   },
@@ -47,18 +47,18 @@ export default {
   },
 
   
-  // Gets the book with the given id
+  // Gets the  buildings with the given id
   getAllSavedBuilding: function(buildingid) {
     return axios.get("/api/saved/savedview/" + buildingid);
   },
     
-  // Gets the book with the given id
+  // Gets the  buildings with the given id
   getUserWithBuildingId: function(userid) {
     return axios.get("/api/saved/buildings/" + userid);
   },
 
 
-  // Saves a book to the database
+  // Saves a buildings to the database
   saveBuilding: function(buildingData) {
     console.log(buildingData)
     return axios.post("/api/buildings", buildingData);

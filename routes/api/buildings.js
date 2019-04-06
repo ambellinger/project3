@@ -3,24 +3,26 @@ const BldgController = require("../../controllers/BldgController");
 
 // Matches with "/api/buildings"
 
-router.route("/:list")
-.get(BldgController.findList)
+router
+.route("/:list")
+  .get(BldgController.findList)
 
-router.route("/")
-// "this route is working"
+router
+.route("/")
+  // "this route is working"
   .get(BldgController.findAll)
   .post(BldgController.create)
 
-router.route("/users/populateduser")
-.post(BldgController.finduser)
+router
+.route("/users/populateduser")
+  .post(BldgController.finduser)
 
-router.route("/buildings/:userid")
-.put(BldgController.update)
-.get(BldgController.populateUserBuildings)
+router
+.route("/buildings/:userid")
+  .put(BldgController.update)
+  .get(BldgController.populateUserBuildings)
 
-  // router.route("/new")
-  //   .get(BldgController.create)
-// Matches with "/api/books/:id"
+
 router
   .route("/neighborhood/:neighborhood")
   .get(BldgController.findByHood)
@@ -28,7 +30,7 @@ router
   .delete(BldgController.remove)
   .post(BldgController.create)
 
-  router
+router
   .route("/savedview/:buildingid")
   .get(BldgController.findAllSavedBuilding);
 

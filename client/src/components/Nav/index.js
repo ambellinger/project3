@@ -18,24 +18,14 @@ class Nav extends Component {
     logout(event) {
         event.preventDefault()
     
-      //  Kurt, this reset the loggedIn to false 
+      
         sessionStorage.setItem("loggedIn","false");
         sessionStorage.clear();
-      // Kurt, this routes back to the homepage
+      
                  window.location.href="/";
 
 
-        // axios.post('/login').then(response => {
-        //   console.log(response.data)
-        //   if (response.status === 200) {
-        //     this.props.updateUser({
-        //       loggedIn: false,
-        //       username: null
-        //     })
-        //   }
-        // }).catch(error => {
-        //     console.log('Logout error')
-        // })
+     
       }
 
       updateUser(userObject) {
@@ -61,8 +51,7 @@ render(){
 
       <div>
 
-        {/* Kurt, it will look for loggedIn value that was stored in sessionStorage, if it is true, it will show logout only
-        otherwise the homepage */}
+        
       {sessionStorage.getItem("loggedIn")==="true"? (
                             <section className="navbar-section">
                                 <Link to="/" className="btn btn-link text-secondary">

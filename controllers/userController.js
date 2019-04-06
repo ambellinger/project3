@@ -1,16 +1,14 @@
-// // const express = require('express')
-// const router = express.Router()
+
 const dB = require('../models')
-const passport = require('../passport')
 const bcrypt = require('bcryptjs');
 
 
 
 module.exports = {
     create: function (req, res) {
-       // const { username, password } = req.body
-       const username =req.body.username;
-       const password =req.body.password;
+        // const { username, password } = req.body
+        const username = req.body.username;
+        const password = req.body.password;
         // ADD VALIDATION
 
 
@@ -43,90 +41,39 @@ module.exports = {
 
             username: req.body.username
         }).then(function (user) {
-          if (!user) {
-            res.json( user);
-          } else {
-            bcrypt.compare(req.body.password, user.password, function (err, result) {
-              if (result === true) {
+            if (!user) {
                 res.json(user);
-              } else {
-                res.json(false);
-              }
-            });
-          }
+            } else {
+                bcrypt.compare(req.body.password, user.password, function (err, result) {
+                    if (result === true) {
+                        res.json(user);
+                    } else {
+                        res.json(false);
+                    }
+                });
+            }
         });
 
-        // ', (err, user) => {
-        // 	// if (err) {
-        // 	// 	res.json({err})
-        // 	// }
-        // 	if (!user) {
-        //         res.json( results => {
-        //             message: 'Incorrect username'
 
-        //     })
-        // 	}
-        // 	if (!user.checkPassword(req.body.password)) {
-        //         res.json( { message: 'Incorrect password' })
-        // 	}
-        // 	res.json ({username: user})
-        // })
 
 
     },
-    checkusername:function (req, res) {
+    checkusername: function (req, res) {
         dB.User.findOne({
 
-            username: req.body.username 
-        }).then(user=> {
-            
-            if(user)
-             res.send(true)
-             else
-             res.send(false)
+            username: req.body.username
+        }).then(user => {
+
+            if (user)
+                res.send(true)
+            else
+                res.send(false)
         }
-   
-        
+
+
         );
     }
 }
 
 
 
-// router.post(
-//     '/login',
-//     function (req, res, next) {
-//         console.log('routes/user.js, login, req.body: ');
-//         console.log(req.body)
-//         next()
-//     },
-//     passport.authenticate('local'),
-//     (req, res) => {
-//         console.log('logged in', req.user);
-//         var userInfo = {
-//             username: req.user.username
-//         };
-//         res.send(userInfo);
-//     }
-// )
-
-// router.get('/', (req, res, next) => {
-//     console.log('===== user!!======')
-//     console.log(req.user)
-//     if (req.user) {
-//         res.json({ user: req.user })
-//     } else {
-//         res.json({ user: null })
-//     }
-// })
-
-// router.post('/logout', (req, res) => {
-//     if (req.user) {
-//         req.logout()
-//         res.send({ msg: 'logging out' })
-//     } else {
-//         res.send({ msg: 'no user to log out' })
-//     }
-// })
-
-// module.exports = router

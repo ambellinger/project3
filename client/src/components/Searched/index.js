@@ -18,7 +18,6 @@ class Searched extends Component {
           <button bldgnum={this.props.identification} onClick ={this.props.clickHandler} type="button"className="btn btn-dark">Add to my Sites</button>
 
         </div>
-        {/* <h6>Submission Rating {this.props.rating}</h6> */}
       </div>
     );
   }

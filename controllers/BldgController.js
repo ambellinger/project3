@@ -3,9 +3,6 @@ const db = require("../models");
 // Defining methods for the buildings Controller
 module.exports = {
 
-
-
-
   findAll: function (req, res) {
     db.Building
       .find(req.query)
@@ -20,8 +17,7 @@ module.exports = {
       .distinct('neighborhood', function (err, response) {
         res.json(response)
       })
-    // .then(dbBuilding => res.json(response))
-    // .catch(err => res.status(422).json(err));
+
   },
   findByHood: function (req, res) {
     db.Building
@@ -29,12 +25,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // create: function(req, res) {
-  //   db.Building
-  //     .create(req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+
 
   create: function (req, res) {
     db.Building
@@ -71,7 +62,7 @@ module.exports = {
   },
   populateUserBuildings: function (req, res) {
     // Find all users
-    db.User.find({_id: req.params.userid})
+    db.User.find({ _id: req.params.userid })
       // Specify that we want to populate the retrieved users with any associated notes
       .populate("buildings")
       .then(function (dbUser) {
@@ -86,7 +77,7 @@ module.exports = {
   },
   findAllSavedBuilding: function (req, res) {
 
-    console.log( "find all saved buildings" + req.params.buildingid );
+    console.log("find all saved buildings" + req.params.buildingid);
     db.Building
       .findById({ _id: req.params.buildingid })
       .then(dbModel => res.json(dbModel))

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Searched from "../components/Searched";
-import Footer from "../components/Footer";
 import API from "../utils/API";
 
 
