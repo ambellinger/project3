@@ -30,3 +30,27 @@
    justify-content: center;
    padding-top: 10px;
 }
+
+@media screen and (max-width: 980px) {
+    #buttonSignup {
+        min-width: 100px;
+      font-size: 10px;
+    }
+  
+  }
+
+  @media screen and (max-width: 768px) {
+    #buttonSignup {
+        min-width: 100px;
+      font-size: 10px;
+    }
+  
+  }
+
+  @media screen and (max-width: 640px) {
+    #buttonSignup {
+        min-width: 100px;
+      font-size: 10px;
+    }
+  
+  }
