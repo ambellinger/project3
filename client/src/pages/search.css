@@ -4,3 +4,13 @@
   display: flex;
   justify-content: center;
 }
+
+.jumboNav {
+
+}
+
+#insideNav {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}

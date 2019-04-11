@@ -84,14 +84,15 @@ class LoginForm extends Component {
             return (
                 <div>
                     <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-                    <h4 id="loginTitle">Login</h4>
+                    <h4 id="loginTitle">login</h4>
+                    <p id="loginCaption">hey, good to see you again!</p>
                     <div className="formSection">
                     {/* <h4 id="loginTitle">Login</h4> */}
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="username">
-                                    Username:
+                                    
                                 </label>
                             </div>
                             <div className="col-3 col-mr-auto">
@@ -100,7 +101,7 @@ class LoginForm extends Component {
                                     type="text"
                                     id="username"
                                     name="username"
-                                    placeholder=""
+                                    placeholder="Username"
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
@@ -109,13 +110,13 @@ class LoginForm extends Component {
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="password">
-                                    Password:{' '}
+                                    {' '}
                                 </label>
                             </div>
                             <div className="col-3 col-mr-auto">
                                 <input
                                     className="form-input"
-                                    placeholder=""
+                                    placeholder="Password"
                                     type="password"
                                     name="password"
                                     value={this.state.password}
@@ -131,9 +132,10 @@ class LoginForm extends Component {
                                 onClick={this.handleSubmit}
                                 type="submit"
                             >
-                                Login
+                                CONTINUE →
                             </button>
                         </div>
+                        <p className="forgotPass">Forgot your password?</p>
                     </form>
                     </div>
                 </div>

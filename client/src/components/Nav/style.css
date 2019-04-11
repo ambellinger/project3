@@ -2,41 +2,43 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
 
 nav { 
-  background-color:  black;
+  /* overflow: hidden; */
+  background-color:  transparent;
+  
 }
 
-.navbar-brand{
-    color: white;
+/* .navbar-brand{
+    color: black;
 
-}
+} */
 
-.nav-item{
-  color: white;
+/* .nav-item{
+  color: black;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 18px;
   float: left!important;
   
-}
+} */
 
-#itinerary,
+/* #itinerary,
 #submitReviewButton {
   float: left;
   margin-left: 0; 
-}
+} */
 
 .text-secondary {
-  color: white!important;
+  color: black!important;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 18px;
 }
 
-.secondNavButton {
+/* .secondNavButton {
   margin-right: 950px;
-}
+} */
 
 a:hover{ 
   text-decoration: none!important;
-  color: white;
+  /* color: white; */
 };
 
 /* #itinerary {

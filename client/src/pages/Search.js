@@ -64,9 +64,13 @@ class Search extends Component {
   render() {
     return (
       <div>
+       <div className="jumboNav"> 
+       <div id="insideNav">
       <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+      </div>
 
         <Jumbotron/>
+      </div>
         
           <SearchForm id="searchBar"
             handleFormSubmit={this.handleFormSubmit}
