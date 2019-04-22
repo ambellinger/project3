@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 const db = require("../models");
 
@@ -6,14 +7,14 @@ const db = require("../models");
 mongoose.connect(
   process.env.MONGODB_URI 
   || 
-   "mongodb://heroku_1sltkj12:bquauefucuo84q80kbc3gmdvag@ds155634.mlab.com:55634/heroku_1sltkj12"
+  "mongodb://localhost/archfinder"
 );
 
 const siteSeed = [
   {
     name: "Aqua Building",
     architect: "Jeanne Gang",
-    neighborhood: "Loop",
+    neighborhood: "Near North Side (Cabrini-Green, Dearborn Parkway, The Gold Coast, Goose Island, Magnificent Mile, Near North Side, Old Town, River North, River West, State Parkway, Streeterville)",
     address: "225 N Columbus Dr",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Aqua_Tower_Chicago.jpg/800px-Aqua_Tower_Chicago.jpg",
@@ -27,7 +28,7 @@ const siteSeed = [
   {
     name: "S. R. Crown Hall",
     architect: "Ludwig Mies van der Rohe",
-    neighborhood: "South Side",
+    neighborhood: "Bronzeville",
     address: "3360 S. State Street",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/S.R._Crown_Hall.jpg/1024px-S.R._Crown_Hall.jpg",
@@ -41,7 +42,7 @@ const siteSeed = [
   {
     name: "Edgewater Beach Hotel",
     architect: "Marshall & Fox",
-    neighborhood: "North Side",
+    neighborhood: "Edgewater (Andersonville, Edgewater, Edgewater Glen, Epic, Lakewood/Balmoral)",
     address: "5555 N. Sheridan Rd",
     image:
       "https://s3.amazonaws.com/architecture-org/files/modules/edgewater-beach-apts-eric-allix-rogers-01-2.jpg",
@@ -55,7 +56,7 @@ const siteSeed = [
   {
     name: "Morris B Sachs Building",
     architect: "Liechenko & Esser",
-    neighborhood: "Northwest Side",
+    neighborhood: "Logan Square (Logan Square, Bucktown, Palmer Square)",
     address: "2800-2808 N. Milwaukee Avenue ",
     image: "https://blaservations.files.wordpress.com/2011/03/img_6954.jpg",
     description:
@@ -68,7 +69,7 @@ const siteSeed = [
   {
     name: "Emil Bach House",
     architect: "Frank Lloyd Wright",
-    neighborhood: "North Side",
+    neighborhood: "Rogers Park",
     address: "7415 N. Sheridan Road ",
     image:
       "https://flwright.org/sites/default/files/detail/bachhouse472x240_0.jpg",
@@ -82,7 +83,7 @@ const siteSeed = [
   {
     name: "The Monadnock Building",
     architect: "Burnham & Root",
-    neighborhood: "Loop",
+    neighborhood: "Loop (The Loop, New Eastside, Printer’s Row, South Loop)",
     address: "53 West Jackson Boulevard",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Monadnock.jpg/800px-Monadnock.jpg",
@@ -95,8 +96,8 @@ const siteSeed = [
   },
   {
     name: "Frederick C. Robie House",
-    architect: "rank Lloyd Wright",
-    neighborhood: "South Side",
+    architect: "Frank Lloyd Wright",
+    neighborhood: "Hyde Park",
     address: "5757 South Woodlawn Avenue",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Frederick_C._Robie_House.JPG/1024px-Frederick_C._Robie_House.JPG",
@@ -110,7 +111,7 @@ const siteSeed = [
   {
     name: "Rookery Building",
     architect: "Burnham & Root",
-    neighborhood: "Loop",
+    neighborhood: "Loop (The Loop, New Eastside, Printer’s Row, South Loop)",
     address: "209 South LaSalle Street",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa0lKYPegEvdg9RnmxHc6NhdtMUKrXXt1p8FRedQdGiX0HE2R0",
@@ -126,7 +127,7 @@ const siteSeed = [
   {
     name: "South Side Community Art Center",
     architect: " L. Gustav Hallberg",
-    neighborhood: "South Side",
+    neighborhood: "Bronzeville",
     address: "3831 South Michigan Avenue",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa0lKYPegEvdg9RnmxHc6NhdtMUKrXXt1p8FRedQdGiX0HE2R0",
@@ -141,7 +142,7 @@ const siteSeed = [
   {
     name: "Jewelers' Building",
     architect: "Joachim G. Giaver and Frederick P. Dinkelberg",
-    neighborhood: "Loop",
+    neighborhood: "Loop (The Loop, New Eastside, Printer’s Row, South Loop)",
     address: "35 East Wacker",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Chicago_September_2016-41.jpg/225px-Chicago_September_2016-41.jpg",
@@ -155,7 +156,7 @@ const siteSeed = [
   {
     name: "River City",
     architect: "Bertrand Goldberg",
-    neighborhood: "South Side",
+    neighborhood: "Loop (The Loop, New Eastside, Printer’s Row, South Loop)",
     address: "800 South Wells Street",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/River_City_01.jpg/1024px-River_City_01.jpg",
@@ -170,7 +171,7 @@ const siteSeed = [
   {
     name: "Lake Point Tower",
     architect: "John Heinrich and George Schipporeit",
-    neighborhood: "North Side",
+    neighborhood: "Near North Side (Cabrini-Green, Dearborn Parkway, The Gold Coast, Goose Island, Magnificent Mile, Near North Side, Old Town, River North, River West, State Parkway, Streeterville)",
     address: "505 North Lake Shore Drive",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Lake_Point_Tower.jpg/1200px-Lake_Point_Tower.jpg",
@@ -184,7 +185,7 @@ const siteSeed = [
   {
     name: "Ida B. Wells-Barnett House",
     architect: "Joseph Thain",
-    neighborhood: "South Side",
+    neighborhood: "Bronzeville",
     address: "3624 S. Martin Luther King Jr. Blvd",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/20070601_Wells_House_%282%29.JPG/800px-20070601_Wells_House_%282%29.JPG",
@@ -199,7 +200,7 @@ const siteSeed = [
   {
     name: "Hull House",
     architect: "Pond and Pond",
-    neighborhood: "West Side",
+    neighborhood: "Bronzeville",
     address: "800 S. Halsted Street",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/UIC_Hull_House.JPG/800px-UIC_Hull_House.JPG",
@@ -214,7 +215,7 @@ const siteSeed = [
   {
     name: "Marina City",
     architect: "Bertrand Goldberg",
-    neighborhood: "North Side",
+    neighborhood: "Near North Side (Cabrini-Green, Dearborn Parkway, The Gold Coast, Goose Island, Magnificent Mile, Near North Side, Old Town, River North, River West, State Parkway, Streeterville)",
     address: "State St & Wacker Dr",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Marina_City_Chicago_2012-0224.jpg/200px-Marina_City_Chicago_2012-0224.jpg",
@@ -224,7 +225,973 @@ const siteSeed = [
     rating: null,
     date: new Date(Date.now()),
     created_by: "brad"
-  }
+  },
+
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Ridge (Nortown, Peterson Park, Rosehill, West Ridge, West Rogers Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Uptown (Clarendon Park, Buena Park, New Chinatown, Sheridan Park, Uptown)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Lincoln Square (Bowmanville, Budlong Woods, Lincoln Square, Ravenswood, Ravenswood Gardens)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Edison Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Norwood Park (Big Oaks, Norwood Park, Old Norwood, Oriole Park, Union Ridge)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Jefferson Park (Gladstone Park, Jefferson Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Forest Glen (Edgebrook, Forest Glen, Middle Edgebrook, Sauganash, Wildwood)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "North Park (Hollywood Park, North Park, Pulaski Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Albany Park (Albany Park, Mayfair, North Mayfair, Ravenswood Manor)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Edgewater (Andersonville, Edgewater, Edgewater Glen, Epic, Lakewood/Balmoral)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "O’Hare (O’Hare, Schorsch Forest View)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "North Center (Northcenter, Roscoe Village, Saint Ben’s)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Lakeview (Lake View East, North Halsted, West Lakeview, Wrigleyville)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Lincoln Park (DePaul, Old Town Triangle, Park West, Lincoln Park, Ranch Triangle, Sheffield Neighbors, Wrightwood Neighbors)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Avondale",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Portage Park (Portage Park, Six Corners)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Irving Park (Irving Park, Kilbourn Park, Old Irving Park, The Villa)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Dunning (Belmont Heights, Belmont Terrace, Dunning, Irving Woods, Schorsch Village)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Montclare",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+ 
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Belmont Cragin (Brickyard, Cragin, Hanson Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Hermosa (Belmont Gardens, Hermosa, Kelvyn Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Near North Side (Cabrini-Green, Dearborn Parkway, The Gold Coast, Goose Island, Magnificent Mile, Near North Side, Old Town, River North, River West, State Parkway, Streeterville)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Near South Side (Dearborn Park, Near South Side, Museum Park, Central Station, Prairie Avenue Historic District)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Humboldt Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Town (East Village, Noble Square, Ukrainian Village, Smith Park, West Town, Wicker Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Austin (Austin, Galewood, The Island)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Garfield Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "East Garfield Park (East Garfield Park, Fifth City)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Near West Side",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "North Lawndale",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "South Lawndale (Little Village, South Lawndale, Marshall Square)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Lower West Side (Heart of Chicago, Pilsen)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Armour Square (Armour Square, Chinatown, Wentworth Gardens)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Douglas (Bronzeville, Douglas, Groveland Park, Lake Meadows, Prairie Shores, South Commons)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Oakland",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Fuller Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Grand Boulevard ",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Kenwood",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Washington Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Hyde Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Woodlawn",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "South Shore (Jackson Park Highlands, South Shore)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Bridgeport",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Greater Grand Crossing (Grand Crossing, Greater Grand Crossing, Park Manor)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Garfield Ridge (Garfield Ridge, Le Claire Courts, Sleepy Hollow, Vittum Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Archer Heights",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Brighton Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "McKinley Park ",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "New City (Back of the Yards, Canaryville, New City)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Elsdon",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Gage Park",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Clearing (Chrysler Village, Clearing)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Lawn (Ford City, West Lawn)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Chicago Lawn (Chicago Lawn, Lithuanian Plaza, Marquette Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Englewood",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Englewood (Englewood, Hamilton Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Ashburn (Ashburn, Ashburn Estates, Beverly View, Crestline, Parkview, Scottsdale, Wrightwood)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Auburn Gresham (Auburn Gresham, Gresham)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Beverly (Beverly, West Beverly)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Washington Heights (Brainerd, Longwood Manor, Washington Heights)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Mount Greenwood (Mount Greenwood, Talley’s Corner)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Morgan Park (Beverly Woods, Kennedy Park, Morgan Park, West Morgan Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Chatham (Chatham, West Chesterfield)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Avalon Park (Avalon Park, Marynook, Stony Island Park)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "South Chicago",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Burnside",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Calumet Heights (Calumet Heights, Pill Hill)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Roseland (Fernwood, Princeton Park, Roseland)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Pullman (Cottage Grove Heights, Pullman)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "South Deering (Jeffrey Manor, South Deering)",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "East Side",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "West Pullman",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Riverdale",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+  {
+    name: "Placeholder Bldg",
+    architect: "Placeholder Architect",
+    neighborhood: "Hegewisch",
+    address: "1234 Placeholder Street",
+    image:
+      "https://via.placeholder.com/300",
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    year: "0000",
+    rating: null,
+    date: new Date(Date.now()),
+    created_by: "brad"
+  },
+
 ];
 
 db.Building.remove({})
